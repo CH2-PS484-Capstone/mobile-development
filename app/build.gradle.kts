@@ -72,8 +72,9 @@ dependencies {
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.5")
 
     // Coroutines
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 
     // Others
     implementation("de.hdodenhof:circleimageview:3.1.0")
+    implementation("com.jpardogo.googleprogressbar:library:1.2.0")
 }
