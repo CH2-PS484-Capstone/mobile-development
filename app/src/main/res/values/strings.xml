@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Explorin</string>
+    <string name="string_expand_your_exploration">Expand Your Exploration</string>
+    <string name="text_onboarding">Solo backpacker? Tourist? First time traveler? Anda selalu diterima di sini.</string>
+    <string name="adventurer">Adventurer</string>
+    <string name="mulai_petualanganmu">Mulai Petualanganmu</string>
+    <string name="welcome">Selamat Datang!</string>
+    <string name="please_login">Silakan login untuk melanjutkan</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="masuk">Masuk</string>
+    <string name="havent_account">Belum punya akun?</string>
+    <string name="register">Daftar</string>
+    <string name="please_register">Silakan register untuk membuat akun</string>
+    <string name="name">Nama Lengkap</string>
+    <string name="login">Masuk</string>
+    <string name="have_account">Sudah punya akun?</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tab_home">Beranda</string>
+    <string name="tab_account">Akun</string>
+    <string name="tab_favorite">Favorit</string>
+    <string name="tab_search">Pencarian</string>
+    <string name="where_to_go">Mau ke mana?</string>
+    <string name="populer">Populer</string>
+    <string name="stars_rate">4.8</string>
+    <string name="string_parking">Parking Area</string>
+</resources>
