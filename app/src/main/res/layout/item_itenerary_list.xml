@@ -32,7 +32,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                style="@style/Body5"
+                style="@style/LR12"
                 android:layout_gravity="bottom"
                 android:drawablePadding="4dp"
                 android:gravity="center_vertical"
@@ -50,7 +50,7 @@
 
     <TextView
         android:id="@+id/tv_title"
-        style="@style/Body3"
+        style="@style/LSB14"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -60,7 +60,7 @@
 
     <TextView
         android:id="@+id/tv_category"
-        style="@style/DetailFont"
+        style="@style/LR10"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
@@ -88,7 +88,7 @@
             android:id="@+id/tv_location"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/DetailFont"
+            style="@style/LR10"
             tools:text="Location, Indonesia"
             />
 

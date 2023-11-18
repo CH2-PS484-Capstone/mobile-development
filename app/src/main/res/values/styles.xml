@@ -8,61 +8,61 @@
 
 
     <!-- font style -->
-    <style name="Heading1">
+    <style name="MB36">
         <item name="android:textColor">@color/text_color</item>
         <item name="android:fontFamily">@font/montserrat_bold</item>
         <item name="android:textSize">36sp</item>
     </style>
 
-    <style name="Heading2">
+    <style name="MB24">
         <item name="android:textColor">@color/text_color</item>
         <item name="android:fontFamily">@font/montserrat_bold</item>
         <item name="android:textSize">24sp</item>
     </style>
 
-    <style name="Heading3">
+    <style name="MSB20">
         <item name="android:textColor">@color/text_color</item>
         <item name="android:fontFamily">@font/montserrat_semibold</item>
         <item name="android:textSize">20sp</item>
     </style>
 
-    <style name="Heading4">
+    <style name="MSB16">
         <item name="android:textColor">@color/text_color</item>
         <item name="android:fontFamily">@font/montserrat_semibold</item>
         <item name="android:textSize">16sp</item>
     </style>
 
-    <style name="Body1">
+    <style name="LSB16">
         <item name="android:textColor">@color/text_color</item>
         <item name="android:fontFamily">@font/lato_semibold</item>
         <item name="android:textSize">16sp</item>
     </style>
 
-    <style name="Body2">
+    <style name="LR16">
         <item name="android:textColor">@color/text_color</item>
         <item name="android:fontFamily">@font/lato_regular</item>
         <item name="android:textSize">16sp</item>
     </style>
 
-    <style name="Body3">
+    <style name="LSB14">
         <item name="android:textColor">@color/text_color</item>
         <item name="android:fontFamily">@font/lato_semibold</item>
         <item name="android:textSize">14sp</item>
     </style>
 
-    <style name="Body4">
+    <style name="LR14">
         <item name="android:textColor">@color/text_color</item>
         <item name="android:fontFamily">@font/lato_regular</item>
         <item name="android:textSize">14sp</item>
     </style>
 
-    <style name="Body5">
+    <style name="LR12">
         <item name="android:textColor">@color/text_color</item>
         <item name="android:fontFamily">@font/lato_regular</item>
         <item name="android:textSize">12sp</item>
     </style>
 
-    <style name="DetailFont">
+    <style name="LR10">
         <item name="android:textColor">@color/text_color</item>
         <item name="android:fontFamily">@font/lato_regular</item>
         <item name="android:textSize">10sp</item>
