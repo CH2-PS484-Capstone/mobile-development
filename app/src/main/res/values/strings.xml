@@ -25,4 +25,11 @@
     <string name="populer">Populer</string>
     <string name="stars_rate">4.8</string>
     <string name="string_parking">Parking Area</string>
+    <string name="empty_state_title">Tidak Ditemukan</string>
+    <string name="empty_state_subtitle">Wahh, data yang kamu cari tidak ada nih</string>
+    <string name="error_state_title">Terjadi Kesalahan</string>
+    <string name="error_state_subtitle">Wahh, sepertinya ada kesalahan. \nSilahkan akses yang lain dulu ya</string>
+    <string name="action_try_again">Coba Lagi</string>
+    <string name="action_loading">Memuat...</string>
+    <string name="personal_information">Informasi Personal</string>
 </resources>

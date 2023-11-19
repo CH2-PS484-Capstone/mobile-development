@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/image_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_error" />
+
+    <TextView
+        android:id="@+id/state_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/MSB20"
+        app:layout_constraintEnd_toEndOf="@+id/image_error"
+        app:layout_constraintStart_toStartOf="@+id/image_error"
+        app:layout_constraintTop_toBottomOf="@+id/image_error"
+        android:text="@string/error_state_title" />
+
+    <TextView
+        android:id="@+id/state_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        style="@style/LR16"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/state_title"
+        app:layout_constraintStart_toStartOf="@+id/state_title"
+        app:layout_constraintTop_toBottomOf="@+id/state_title"
+        android:text="@string/error_state_subtitle"/>
+
+    <Button
+        android:id="@+id/button"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/state_subtitle"
+        android:text="@string/action_try_again"
+        android:textColor="@color/primary_500"
+        android:fontFamily="@font/lato_semibold"
+        android:textSize="20sp"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

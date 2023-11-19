@@ -11,12 +11,12 @@
         android:title="@string/tab_search" />
 
     <item
-        android:id="@+id/fav_list_fragment"
+        android:id="@+id/favorite_fragment"
         android:icon="@drawable/ic_fav"
         android:title="@string/tab_favorite" />
 
     <item
-        android:id="@+id/account_fragment"
+        android:id="@+id/profile_fragment"
         android:icon="@drawable/ic_nav_user"
         android:title="@string/tab_account" />
 </menu>
