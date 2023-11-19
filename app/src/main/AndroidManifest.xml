@@ -23,7 +23,6 @@
         <activity
             android:name=".presentation.welcome.WelcomeActivity"
             android:exported="false">
-
         </activity>
         <activity
             android:name=".MainActivity"

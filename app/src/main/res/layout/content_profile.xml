@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+    
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/civ_profile"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars"
+        />
+    
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        style="@style/LSB16"
+        app:layout_constraintStart_toEndOf="@id/civ_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/civ_profile"
+        android:layout_marginStart="10dp"
+        tools:text="Wildan"
+        />
+
+    <TextView
+        android:id="@+id/tv_email"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        style="@style/LR14"
+        app:layout_constraintStart_toStartOf="@id/tv_name"
+        app:layout_constraintEnd_toEndOf="@id/tv_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_name"
+        tools:text="wildan@explorin.com"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/menu_mytrip"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_email"
+        app:layout_constraintStart_toStartOf="@id/civ_profile"
+        app:layout_constraintTop_toBottomOf="@id/civ_profile">
+
+        <ImageView
+            android:id="@+id/mytrip_image"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_user" />
+
+        <TextView
+            android:id="@+id/mytrip_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            style="@style/LR14"
+            android:text="@string/personal_information"
+            app:layout_constraintBottom_toBottomOf="@+id/mytrip_image"
+            app:layout_constraintStart_toEndOf="@+id/mytrip_image"
+            app:layout_constraintTop_toTopOf="@+id/mytrip_image" />
+
+        <ImageView
+            android:id="@+id/mytrip_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/mytrip_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/mytrip_text"
+            app:srcCompat="@drawable/ic_arrow_right" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/action_logout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/menu_mytrip"
+        app:layout_constraintStart_toStartOf="@+id/menu_mytrip"
+        app:layout_constraintTop_toBottomOf="@+id/menu_mytrip">
+
+        <ImageView
+            android:id="@+id/logout_image"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_logout" />
+
+        <TextView
+            android:id="@+id/logout_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            style="@style/LR14"
+            android:text="Logout"
+            android:textColor="#FF0000"
+            app:layout_constraintBottom_toBottomOf="@+id/logout_image"
+            app:layout_constraintStart_toEndOf="@+id/logout_image"
+            app:layout_constraintTop_toTopOf="@+id/logout_image" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

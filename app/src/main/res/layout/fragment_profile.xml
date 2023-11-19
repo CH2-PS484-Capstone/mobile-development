@@ -4,11 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.home.HomeFragment">
+    tools:context=".presentation.profile.ProfileFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
 
         <include
             android:id="@+id/state_loading"
@@ -47,8 +48,8 @@
             tools:visibility="invisible" />
 
         <include
-            android:id="@+id/detail_content"
-            layout="@layout/content_home"
+            android:id="@+id/account_content"
+            layout="@layout/content_profile"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
