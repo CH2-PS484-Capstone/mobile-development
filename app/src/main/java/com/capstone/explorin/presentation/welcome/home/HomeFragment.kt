@@ -1,4 +1,4 @@
-package com.capstone.explorin.presentation.home
+package com.capstone.explorin.presentation.welcome.home
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

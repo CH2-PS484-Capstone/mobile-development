@@ -7,22 +7,22 @@
 
     <fragment
         android:id="@+id/home_fragment"
-        android:name="com.capstone.explorin.presentation.home.HomeFragment"
+        android:name="com.capstone.explorin.presentation.welcome.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/profile_fragment"
-        android:name="com.capstone.explorin.presentation.profile.ProfileFragment"
+        android:name="com.capstone.explorin.presentation.welcome.profile.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/favorite_fragment"
-        android:name="com.capstone.explorin.presentation.favorite.FavoriteFragment"
+        android:name="com.capstone.explorin.presentation.welcome.favorite.FavoriteFragment"
         android:label="fragment_favorite"
         tools:layout="@layout/fragment_favorite" />
     <fragment
         android:id="@+id/search_fragment"
-        android:name="com.capstone.explorin.presentation.search.SearchFragment"
+        android:name="com.capstone.explorin.presentation.welcome.search.SearchFragment"
         android:label="fragment_search"
         tools:layout="@layout/fragment_search" />
 </navigation>

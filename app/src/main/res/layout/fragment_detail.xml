@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context=".presentation.welcome.detail.DetailFragment">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_itinerary"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize10Percent"
+        tools:src="@tools:sample/backgrounds/scenic" />
+
+    <TextView
+        android:id="@+id/itinerary_name"
+        style="@style/MB24"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@id/iv_itinerary"
+        app:layout_constraintTop_toBottomOf="@id/iv_itinerary"
+        tools:text="Pantai Kuta" />
+
+
+    <TextView
+        android:id="@+id/rating"
+        style="@style/LR12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="5dp"
+        android:drawablePadding="4dp"
+        android:gravity="center_vertical"
+        android:padding="5dp"
+        android:text="@string/stars_rate"
+        app:drawableStartCompat="@drawable/ic_stars"
+        app:drawableTint="@color/yellow"
+        app:layout_constraintStart_toStartOf="@id/itinerary_name"
+        app:layout_constraintTop_toBottomOf="@id/itinerary_name" />
+
+    <TextView
+        android:id="@+id/tv_description"
+        style="@style/LR14"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="@id/rating"
+        app:layout_constraintTop_toBottomOf="@id/rating"
+        tools:text="@string/dummy_text" />
+
+    <TextView
+        android:id="@+id/tv_facility"
+        style="@style/MSB16"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/facility"
+        app:layout_constraintStart_toStartOf="@id/tv_description"
+        app:layout_constraintTop_toBottomOf="@id/tv_description" />
+
+    <TextView
+        android:id="@+id/facility"
+        style="@style/LR14"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="@id/tv_facility"
+        app:layout_constraintTop_toBottomOf="@id/tv_facility"
+        tools:text="-Toilet\n-Tempat Parkir" />
+
+    <TextView
+        android:id="@+id/tv_galery"
+        style="@style/MSB16"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/photos"
+        app:layout_constraintStart_toStartOf="@id/facility"
+        app:layout_constraintTop_toBottomOf="@id/facility" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

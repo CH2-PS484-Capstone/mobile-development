@@ -76,14 +76,14 @@
         />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_itenerary"
+        android:id="@+id/rv_itinerary"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="12dp"
         app:layout_constraintTop_toBottomOf="@id/tv_populer"
         app:layout_constraintStart_toStartOf="parent"
-        tools:listitem="@layout/item_itenerary_list"
+        tools:listitem="@layout/item_itinerary_list"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         tools:itemCount="5"
         />

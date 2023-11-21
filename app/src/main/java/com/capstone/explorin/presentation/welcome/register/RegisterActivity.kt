@@ -1,12 +1,12 @@
-package com.capstone.explorin.presentation.login
+package com.capstone.explorin.presentation.welcome.register
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.capstone.explorin.R
 
-class LoginActivity : AppCompatActivity() {
+class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        setContentView(R.layout.activity_register)
     }
 }

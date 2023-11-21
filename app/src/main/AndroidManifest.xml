@@ -15,10 +15,10 @@
         android:theme="@style/Theme.Explorin"
         tools:targetApi="31">
         <activity
-            android:name=".presentation.register.RegisterActivity"
+            android:name=".presentation.welcome.register.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".presentation.login.LoginActivity"
+            android:name=".presentation.welcome.login.LoginActivity"
             android:exported="false" />
         <activity
             android:name=".presentation.welcome.WelcomeActivity"

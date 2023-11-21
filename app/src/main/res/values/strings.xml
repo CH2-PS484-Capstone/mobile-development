@@ -32,4 +32,7 @@
     <string name="action_try_again">Coba Lagi</string>
     <string name="action_loading">Memuat...</string>
     <string name="personal_information">Informasi Personal</string>
+    <string name="dummy_text">Lorem ipsum dolor sit amet consectetur. Magna scelerisque tortor lacus id lectus scelerisque sit massa. Accumsan tellus cursus habitant phasellus in sit ultricies. Nisl lobortis cursus nisl hac ac pellentesque eu mi. Etiam purus sed risus vulputate tincidunt nisi vitae.</string>
+    <string name="facility">Fasilitas</string>
+    <string name="photos">Galeri Foto</string>
 </resources>
