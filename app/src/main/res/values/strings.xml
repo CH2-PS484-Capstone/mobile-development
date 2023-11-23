@@ -37,4 +37,9 @@
     <string name="photos">Galeri Foto</string>
     <string name="location">Lokasi</string>
     <string name="see_360">Lihat 360 View</string>
+    <string name="change_photo">Ubah Foto</string>
+    <string name="username">Username</string>
+    <string name="handphone">No. Handphone</string>
+    <string name="city">Kota Domisili</string>
+    <string name="dob">Tanggal Lahir</string>
 </resources>
