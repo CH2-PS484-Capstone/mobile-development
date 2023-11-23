@@ -2,6 +2,8 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("com.google.devtools.ksp")
+    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
+    id("kotlin-parcelize")
 }
 
 android {
@@ -73,6 +75,11 @@ dependencies {
 
     // Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+
+    //maps
+    implementation ("com.google.android.gms:play-services-location:21.0.1")
+    implementation ("com.google.android.gms:play-services-places:17.0.0")
+    implementation ("com.google.android.gms:play-services-maps:18.1.0")
 
     // Others
     implementation("de.hdodenhof:circleimageview:3.1.0")

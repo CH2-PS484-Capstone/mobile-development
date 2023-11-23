@@ -35,4 +35,6 @@
     <string name="dummy_text">Lorem ipsum dolor sit amet consectetur. Magna scelerisque tortor lacus id lectus scelerisque sit massa. Accumsan tellus cursus habitant phasellus in sit ultricies. Nisl lobortis cursus nisl hac ac pellentesque eu mi. Etiam purus sed risus vulputate tincidunt nisi vitae.</string>
     <string name="facility">Fasilitas</string>
     <string name="photos">Galeri Foto</string>
+    <string name="location">Lokasi</string>
+    <string name="see_360">Lihat 360 View</string>
 </resources>

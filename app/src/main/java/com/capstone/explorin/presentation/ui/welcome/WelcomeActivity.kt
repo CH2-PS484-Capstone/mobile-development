@@ -1,4 +1,4 @@
-package com.capstone.explorin.presentation.welcome
+package com.capstone.explorin.presentation.ui.welcome
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

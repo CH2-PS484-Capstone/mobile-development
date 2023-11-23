@@ -1,4 +1,4 @@
-package com.capstone.explorin.presentation.welcome.register
+package com.capstone.explorin.presentation.ui.register
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
