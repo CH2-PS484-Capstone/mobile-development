@@ -1,151 +1,181 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     tools:context=".presentation.ui.detail.DetailFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/linearLayout"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/iv_itinerary"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="250dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize10Percent"
-            tools:src="@tools:sample/backgrounds/scenic" />
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/itinerary_name"
-            style="@style/MB24"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            app:layout_constraintStart_toStartOf="@id/iv_itinerary"
-            app:layout_constraintTop_toBottomOf="@id/iv_itinerary"
-            tools:text="Pantai Kuta" />
-
-
-        <TextView
-            android:id="@+id/rating"
-            style="@style/LR12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:layout_marginTop="5dp"
-            android:drawablePadding="4dp"
-            android:gravity="center_vertical"
-            android:padding="5dp"
-            android:text="@string/stars_rate"
-            app:drawableStartCompat="@drawable/ic_stars"
-            app:drawableTint="@color/yellow"
-            app:layout_constraintStart_toStartOf="@id/itinerary_name"
-            app:layout_constraintTop_toBottomOf="@id/itinerary_name" />
-
-        <TextView
-            android:id="@+id/tv_description"
-            style="@style/LR14"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            app:layout_constraintStart_toStartOf="@id/rating"
-            app:layout_constraintTop_toBottomOf="@id/rating"
-            tools:text="@string/dummy_text" />
-
-        <TextView
-            android:id="@+id/tv_facility"
-            style="@style/MSB16"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="@string/facility"
-            app:layout_constraintStart_toStartOf="@id/tv_description"
-            app:layout_constraintTop_toBottomOf="@id/tv_description" />
-
-        <TextView
-            android:id="@+id/facility"
-            style="@style/LR14"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            app:layout_constraintStart_toStartOf="@id/tv_facility"
-            app:layout_constraintTop_toBottomOf="@id/tv_facility"
-            tools:text="-Toilet\n-Tempat Parkir" />
-
-        <TextView
-            android:id="@+id/tv_gallery"
-            style="@style/MSB16"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="@string/photos"
-            app:layout_constraintStart_toStartOf="@id/facility"
-            app:layout_constraintTop_toBottomOf="@id/facility" />
-
-        <Gallery
-            android:id="@+id/gallery"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
-            android:layout_marginTop="12dp"
-            android:animationDuration="2000"
-            android:spacing="10dp"
-            android:unselectedAlpha="50"
-            app:layout_constraintStart_toStartOf="@id/tv_gallery"
-            app:layout_constraintTop_toBottomOf="@id/tv_gallery"
-            tools:listitem="@layout/item_itinerary_list" />
-
-        <TextView
-            android:id="@+id/tv_location"
-            style="@style/MSB16"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="@string/location"
-            app:layout_constraintStart_toStartOf="@id/gallery"
-            app:layout_constraintTop_toBottomOf="@id/gallery" />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cv_maps"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_marginTop="12dp"
-            app:layout_constraintStart_toStartOf="@id/tv_location"
-            app:layout_constraintTop_toBottomOf="@id/tv_location">
-
-            <fragment
-                android:id="@+id/map"
-                android:name="com.google.android.gms.maps.SupportMapFragment"
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_itinerary"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:context=".presentation.ui.detail.DetailFragment" />
+                android:layout_height="250dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize10Percent"
+                tools:src="@tools:sample/backgrounds/scenic" />
 
-        </androidx.cardview.widget.CardView>
-
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:elevation="12dp"
-            android:gravity="center"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent">
-
-            <Button
-                android:id="@+id/btn_360"
-                style="@style/Widget.Material3.Button"
-                android:layout_width="326dp"
+            <TextView
+                android:id="@+id/itinerary_name"
+                style="@style/MB24"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/lato_bold"
-                android:gravity="center"
-                android:text="@string/see_360"
-                android:textSize="16sp" />
-        </LinearLayout>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="@id/iv_itinerary"
+                app:layout_constraintTop_toBottomOf="@id/iv_itinerary"
+                tools:text="Pantai Kuta" />
 
 
-</ScrollView>
+            <TextView
+                android:id="@+id/rating"
+                style="@style/LR12"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="5dp"
+                android:drawablePadding="4dp"
+                android:gravity="center_vertical"
+                android:padding="5dp"
+                android:text="@string/stars_rate"
+                app:drawableStartCompat="@drawable/ic_stars"
+                app:drawableTint="@color/yellow"
+                app:layout_constraintStart_toStartOf="@id/itinerary_name"
+                app:layout_constraintTop_toBottomOf="@id/itinerary_name" />
+
+            <TextView
+                android:id="@+id/tv_description"
+                style="@style/LR14"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/rating"
+                app:layout_constraintTop_toBottomOf="@id/rating"
+                tools:text="@string/dummy_text" />
+
+            <TextView
+                android:id="@+id/tv_facility"
+                style="@style/MSB16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/facility"
+                app:layout_constraintStart_toStartOf="@id/tv_description"
+                app:layout_constraintTop_toBottomOf="@id/tv_description" />
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/facility"-->
+            <!--                style="@style/LR14"-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="12dp"-->
+            <!--                app:layout_constraintStart_toStartOf="@id/tv_facility"-->
+            <!--                app:layout_constraintTop_toBottomOf="@id/tv_facility"-->
+            <!--                tools:text="-Toilet\n-Tempat Parkir" />-->
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/facility"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintStart_toStartOf="@id/tv_facility"
+                app:layout_constraintTop_toBottomOf="@id/tv_facility"
+                tools:listitem="@layout/item_category" />
+
+            <TextView
+                android:id="@+id/tv_gallery"
+                style="@style/MSB16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/photos"
+                app:layout_constraintStart_toStartOf="@id/facility"
+                app:layout_constraintTop_toBottomOf="@id/facility" />
+
+            <Gallery
+                android:id="@+id/gallery"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_marginTop="12dp"
+                android:animationDuration="2000"
+                android:spacing="10dp"
+                android:unselectedAlpha="50"
+                app:layout_constraintStart_toStartOf="@id/tv_gallery"
+                app:layout_constraintTop_toBottomOf="@id/tv_gallery"
+                tools:listitem="@layout/item_itinerary_list" />
+
+            <TextView
+                android:id="@+id/tv_location"
+                style="@style/MSB16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/location"
+                app:layout_constraintStart_toStartOf="@id/gallery"
+                app:layout_constraintTop_toBottomOf="@id/gallery" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_maps"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="12dp"
+                app:layout_constraintEnd_toEndOf="@id/iv_itinerary"
+                app:layout_constraintStart_toStartOf="@id/iv_itinerary"
+                app:layout_constraintTop_toBottomOf="@id/tv_location">
+
+                <fragment
+                    android:id="@+id/map"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:context=".presentation.ui.detail.DetailFragment" />
+
+            </androidx.cardview.widget.CardView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/background_white500_with_radius"
+        android:elevation="12dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/btn_360"
+            style="@style/ButtonStyle"
+            android:layout_width="326dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato_bold"
+            android:gravity="center"
+            android:text="@string/see_360"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

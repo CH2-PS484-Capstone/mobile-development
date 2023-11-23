@@ -39,9 +39,8 @@
                 android:padding="5dp"
                 android:text="@string/stars_rate"
                 android:textColor="@color/white"
-                android:drawableStart="@drawable/ic_stars"
-                android:drawableTint="@color/yellow"
-                />
+                app:drawableStartCompat="@drawable/ic_stars"
+                app:drawableTint="@color/yellow" />
         </androidx.cardview.widget.CardView>
 
     </FrameLayout>

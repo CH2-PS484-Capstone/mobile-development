@@ -76,12 +76,17 @@ dependencies {
     // Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 
-    //maps
+    // Maps
     implementation ("com.google.android.gms:play-services-location:21.0.1")
     implementation ("com.google.android.gms:play-services-places:17.0.0")
-    implementation ("com.google.android.gms:play-services-maps:18.1.0")
+    implementation ("com.google.android.gms:play-services-maps:18.2.0")
+
+    // Paging
+    implementation("androidx.paging:paging-runtime-ktx:3.2.1")
 
     // Others
     implementation("de.hdodenhof:circleimageview:3.1.0")
     implementation("com.jpardogo.googleprogressbar:library:1.2.0")
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+
 }
