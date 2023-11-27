@@ -5,7 +5,7 @@ import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 
 @Parcelize
-data class Login(
+data class LoginRequest(
 
 	@field:SerializedName("email")
 	val email: String? = null,

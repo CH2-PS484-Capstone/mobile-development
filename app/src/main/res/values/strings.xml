@@ -42,4 +42,9 @@
     <string name="handphone">No. Handphone</string>
     <string name="city">Kota Domisili</string>
     <string name="dob">Tanggal Lahir</string>
+    <string name="name_none">Nama tidak boleh kosong</string>
+    <string name="email_none">Email tidak boleh kosong</string>
+    <string name="email_format">Format email salah</string>
+    <string name="password_format">Kata sandi minimal harus 8 karakter</string>
+    <string name="email_taken">Email yang anda masukkan sudah digunakan</string>
 </resources>
