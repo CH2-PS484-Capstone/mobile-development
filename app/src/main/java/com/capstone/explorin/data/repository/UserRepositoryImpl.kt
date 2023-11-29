@@ -1,16 +1,15 @@
 package com.capstone.explorin.data.repository
 
-import androidx.datastore.core.DataStore
-import androidx.datastore.preferences.core.Preferences
+
 import com.capstone.explorin.BuildConfig
 import com.capstone.explorin.R
 import com.capstone.explorin.data.datasource.remote.ApiService
+import com.capstone.explorin.data.datasource.remote.response.LoginRequest
 import com.capstone.explorin.data.datasource.remote.response.LoginResponse
 import com.capstone.explorin.data.datasource.remote.response.LogoutResponse
 import com.capstone.explorin.data.datasource.remote.response.RegisterRequest
 import com.capstone.explorin.data.datasource.remote.response.RegisterResponse
 import com.capstone.explorin.data.datastore.UserPreferences
-import com.capstone.explorin.data.response.LoginRequest
 import com.capstone.explorin.domain.repository.UserRepository
 import com.google.gson.Gson
 import kotlinx.coroutines.Dispatchers
@@ -30,7 +29,7 @@ class UserRepositoryImpl(
         try {
             val request = LoginRequest(email, password)
             val response: LoginResponse = if (BuildConfig.IS_SERVICE_UP) {
-//                apiService.login(request)
+                apiService.loginUser(request)
             } else {
                 val gson = Gson()
                 val stringJson = assetManager.getStringJson(R.raw.login)
@@ -52,7 +51,7 @@ class UserRepositoryImpl(
         try {
             val request = RegisterRequest(name, email, password)
             val response: RegisterResponse = if (BuildConfig.IS_SERVICE_UP) {
-//                apiService.register(request)
+                apiService.registerUser(request)
             } else {
                 val gson = Gson()
                 val stringJson = assetManager.getStringJson(R.raw.register)
