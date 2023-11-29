@@ -23,7 +23,7 @@ class LoginViewModel(
     private val _message = MutableLiveData<String>()
     val message: LiveData<String> = _message
 
-    fun login(loginAccount: LoginAccount) {
+    suspend fun login(loginAccount: LoginAccount) {
         _isLoading.value = true
         val repo = userRepository.login(loginAccount)
         repo.enqueue(object : Callback<LoginResponse> {

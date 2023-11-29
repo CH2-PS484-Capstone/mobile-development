@@ -47,4 +47,5 @@
     <string name="email_format">Format email salah</string>
     <string name="password_format">Kata sandi minimal harus 8 karakter</string>
     <string name="email_taken">Email yang anda masukkan sudah digunakan</string>
+    <string name="see_all">See All</string>
 </resources>

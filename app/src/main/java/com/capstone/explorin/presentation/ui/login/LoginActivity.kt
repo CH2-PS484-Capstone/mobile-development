@@ -20,9 +20,9 @@ class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
 
-    private val loginViewModel: LoginViewModel by lazy {
-        ViewModelProvider(this, LoginViewModelFactory(this))[LoginViewModel::class.java]
-    }
+//    private val loginViewModel: LoginViewModel by lazy {
+//        ViewModelProvider(this, LoginViewModelFactory(this))[LoginViewModel::class.java]
+//    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,34 +34,34 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun setUpUI() {
-        buttonClicked()
+//        buttonClicked()
 //        playAnimation()
 //        observeData()
     }
 
-    private fun buttonClicked() {
-        val loginButton: MaterialButton = binding.btnLogin
-        val emailEditText: TextInputEditText = binding.edtEmailInput
-        val passwordEditText: TextInputEditText = binding.edtPasswordInput
-
-        loginButton.setOnClickListener {
-            emailEditText.clearFocus()
-            passwordEditText.clearFocus()
-
-            if (emailEditText.isEmailValid && passwordEditText.isPasswordValid) {
-                val requestLogin = LoginAccount(
-                    emailEditText.text.toString().trim(),
-                    passwordEditText.text.toString().trim()
-                )
-                loginViewModel.login(requestLogin)
-            } else {
-                if (!emailEditText.isEmailValid) emailEditText.error =
-                    getString(R.string.email_none)
-                if (!passwordEditText.isPasswordValid) passwordEditText.error =
-                    getString(R.string.password_none)
-
-                Toast.makeText(this, R.string.login_invalid, Toast.LENGTH_SHORT).show()
-            }
-        }
-    }
+//    private fun buttonClicked() {
+//        val loginButton: MaterialButton = binding.btnLogin
+//        val emailEditText: TextInputEditText = binding.edtEmailInput
+//        val passwordEditText: TextInputEditText = binding.edtPasswordInput
+//
+//        loginButton.setOnClickListener {
+//            emailEditText.clearFocus()
+//            passwordEditText.clearFocus()
+//
+//            if (emailEditText.isEmailValid && passwordEditText.isPasswordValid) {
+//                val requestLogin = LoginAccount(
+//                    emailEditText.text.toString().trim(),
+//                    passwordEditText.text.toString().trim()
+//                )
+//                loginViewModel.login(requestLogin)
+//            } else {
+//                if (!emailEditText.isEmailValid) emailEditText.error =
+//                    getString(R.string.email_none)
+//                if (!passwordEditText.isPasswordValid) passwordEditText.error =
+//                    getString(R.string.password_none)
+//
+//                Toast.makeText(this, R.string.login_invalid, Toast.LENGTH_SHORT).show()
+//            }
+//        }
+//    }
 }
