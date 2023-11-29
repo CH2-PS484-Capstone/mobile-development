@@ -1,17 +1,17 @@
 package com.capstone.explorin.data.datasource.remote.response
 
-data class DetailResponse(
+data class RegisterResponse(
     var error: Boolean,
     var message: String
 )
 
-data class RegisterAccount(
+data class RegisterRequest(
     var name: String,
     var email: String,
     var password: String
 )
 
-data class LoginAccount(
+data class LoginRequest(
     var email: String,
     var password: String
 )
@@ -20,6 +20,11 @@ data class LoginResponse(
     var error: Boolean,
     var message: String,
     var loginResult: LoginResult
+)
+
+data class LogoutResponse(
+    var error: Boolean,
+    var message: String
 )
 
 data class LoginResult(

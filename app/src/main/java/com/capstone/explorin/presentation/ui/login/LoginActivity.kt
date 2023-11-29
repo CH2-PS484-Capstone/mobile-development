@@ -3,16 +3,11 @@ package com.capstone.explorin.presentation.ui.login
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
-import androidx.lifecycle.ViewModelProvider
-import com.capstone.explorin.R
-import com.capstone.explorin.data.datasource.remote.response.LoginAccount
 import com.capstone.explorin.databinding.ActivityLoginBinding
-import com.google.android.material.button.MaterialButton
-import com.google.android.material.textfield.TextInputEditText
+
 
 val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 

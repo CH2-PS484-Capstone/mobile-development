@@ -1,7 +1,0 @@
-{
-  "status": "Success",
-  "message": "Login successful!",
-  "data": {
-    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsInVzZXJuYW1lIjpudWxsLCJlbWFpbCI6ImpvaG5kb2VAZ21haWwuY29tIiwiaWF0IjoxNjg1NzQ0NzIyLCJleHAiOjE2ODU3NDQ5MDJ9.cAsfgHig3d9UKTduG45SBBjRrpQ0sME176xkunDH0O4"
-  }
-}
