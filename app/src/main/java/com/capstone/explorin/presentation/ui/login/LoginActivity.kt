@@ -47,11 +47,9 @@ class LoginActivity : AppCompatActivity() {
             passwordEditText.clearFocus()
 
             if (emailEditText.isEmailValid && passwordEditText.isPasswordValid) {
-                val requestLogin = LoginRequest(
-                    emailEditText.text.toString().trim(),
-                    passwordEditText.text.toString().trim()
-                )
-                loginViewModel.login(requestLogin)
+                val email = emailEditText.text.toString().trim()
+                val password = passwordEditText.text.toString().trim()
+                loginViewModel.login(email, password)
             } else {
                 if (!emailEditText.isEmailValid) emailEditText.error =
                     getString(R.string.email_none)
