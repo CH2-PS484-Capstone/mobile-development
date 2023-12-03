@@ -10,9 +10,7 @@ interface UserRepository {
     suspend fun register(
         name: String,
         email: String,
-        phoneNumber: String,
         password: String,
-        interest: List<String>
     ): Flow<Result<RegisterResponse>>
     suspend fun logout(): Flow<Result<LogoutResponse>>
     suspend fun saveAccessToken(token: String)
