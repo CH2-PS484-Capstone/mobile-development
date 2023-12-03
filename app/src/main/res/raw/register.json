@@ -1,0 +1,10 @@
+{
+    "status": 200,
+    "message": "Verify mail",
+    "data": {
+        "account": {
+            "name": "Nama lengkap",
+            "email": "email@mail.com",
+        }
+    }
+}

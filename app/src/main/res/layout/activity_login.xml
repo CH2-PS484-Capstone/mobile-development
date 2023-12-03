@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.login.LoginActivity">
+    xmlns:gbp="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.ui.login.LoginActivity">
 
     <ImageView
         android:id="@+id/iv_onboarding"
@@ -60,7 +61,7 @@
             app:layout_constraintTop_toBottomOf="@id/tv_email"
             app:layout_constraintStart_toStartOf="parent">
 
-            <com.google.android.material.textfield.TextInputEditText
+            <com.capstone.explorin.presentation.customview.CustomEmailEditText
                 android:id="@+id/edt_email_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -93,7 +94,7 @@
             app:passwordToggleEnabled="true"
             app:passwordToggleTint="@color/text_hint">
 
-            <com.google.android.material.textfield.TextInputEditText
+            <com.capstone.explorin.presentation.customview.CustomPasswordEditText
                 android:id="@+id/edt_password_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -108,7 +109,6 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_login"
             style="@style/ButtonStyle"
-            android:backgroundTint="@color/primary_500"
             app:layout_constraintTop_toBottomOf="@id/edt_password"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toTopOf="@id/have_acc"
@@ -143,5 +143,17 @@
             app:layout_constraintStart_toEndOf="@id/have_acc" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.jpardogo.android.googleprogressbar.library.GoogleProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="10dp"
+        android:visibility="gone"
+        gbp:type="folding_circles"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

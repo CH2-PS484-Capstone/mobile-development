@@ -32,4 +32,22 @@
     <string name="action_try_again">Coba Lagi</string>
     <string name="action_loading">Memuat...</string>
     <string name="personal_information">Informasi Personal</string>
+    <string name="dummy_text">Lorem ipsum dolor sit amet consectetur. Magna scelerisque tortor lacus id lectus scelerisque sit massa. Accumsan tellus cursus habitant phasellus in sit ultricies. Nisl lobortis cursus nisl hac ac pellentesque eu mi. Etiam purus sed risus vulputate tincidunt nisi vitae.</string>
+    <string name="facility">Fasilitas</string>
+    <string name="photos">Galeri Foto</string>
+    <string name="location">Lokasi</string>
+    <string name="see_360">Lihat 360 View</string>
+    <string name="change_photo">Ubah Foto</string>
+    <string name="username">Username</string>
+    <string name="handphone">No. Handphone</string>
+    <string name="city">Kota Domisili</string>
+    <string name="dob">Tanggal Lahir</string>
+    <string name="name_none">Nama tidak boleh kosong</string>
+    <string name="email_none">Email tidak boleh kosong</string>
+    <string name="email_format">Format email salah</string>
+    <string name="password_format">Kata sandi minimal harus 8 karakter</string>
+    <string name="email_taken">Email yang anda masukkan sudah digunakan</string>
+    <string name="see_all">See All</string>
+    <string name="password_none">Kata sandi tidak boleh kosong</string>
+    <string name="login_invalid">Login gagal. Periksa kembali email dan password kamu.</string>
 </resources>
