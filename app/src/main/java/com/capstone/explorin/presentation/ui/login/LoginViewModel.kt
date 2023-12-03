@@ -3,7 +3,7 @@ package com.capstone.explorin.presentation.ui.login
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.capstone.explorin.data.datasource.remote.response.LoginResponse
-import com.capstone.explorin.data.repository.UserRepositoryImpl
+import com.capstone.explorin.domain.repository.UserRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -14,20 +14,20 @@ import javax.inject.Inject
 
 @HiltViewModel
 class LoginViewModel @Inject constructor(
-    private val repo: UserRepositoryImpl,
+    private val repo: UserRepository
 ) : ViewModel() {
 
     private val _state = MutableStateFlow(LoginUiState())
-    val state : StateFlow<LoginUiState> = _state
+    val state: StateFlow<LoginUiState> = _state
 
     private val _isLoading = MutableStateFlow<Boolean>(false)
     val isLoading: Flow<Boolean> = _isLoading
 
-    fun login(email: String, password : String) {
+    fun login(email: String, password: String) {
         viewModelScope.launch {
             setError(false)
             setLoading(true)
-            repo.login(email,password).collect{ result ->
+            repo.login(email, password).collect { result ->
                 setLoading(false)
                 result.onSuccess {
                     it.loginResult.token.let { token -> repo.saveAccessToken(token) }
@@ -40,18 +40,19 @@ class LoginViewModel @Inject constructor(
         }
     }
 
-    private fun setLoading(value:Boolean){
+    private fun setLoading(value: Boolean) {
         _state.update {
             it.copy(isLoading = value)
         }
     }
-    private fun setError(value:Boolean){
+
+    private fun setError(value: Boolean) {
         _state.update {
             it.copy(isError = value)
         }
     }
 
-    private fun setResult(value : LoginResponse){
+    private fun setResult(value: LoginResponse) {
         _state.update {
             it.copy(LoginResult = value)
         }

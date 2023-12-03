@@ -49,5 +49,5 @@
     <string name="email_taken">Email yang anda masukkan sudah digunakan</string>
     <string name="see_all">See All</string>
     <string name="password_none">Kata sandi tidak boleh kosong</string>
-    <string name="login_invalid">Tidak valid!</string>
+    <string name="login_invalid">Login gagal. Periksa kembali email dan password kamu.</string>
 </resources>

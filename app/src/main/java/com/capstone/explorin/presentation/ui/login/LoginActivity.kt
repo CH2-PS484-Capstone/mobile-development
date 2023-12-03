@@ -1,26 +1,28 @@
 package com.capstone.explorin.presentation.ui.login
 
-import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
-import androidx.datastore.core.DataStore
-import androidx.datastore.preferences.core.Preferences
-import androidx.datastore.preferences.preferencesDataStore
-import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
+import com.capstone.explorin.MainActivity
 import com.capstone.explorin.R
-import com.capstone.explorin.data.datasource.remote.response.LoginRequest
+import com.capstone.explorin.data.datasource.remote.response.LoginResponse
 import com.capstone.explorin.databinding.ActivityLoginBinding
 import com.capstone.explorin.presentation.customview.CustomEmailEditText
 import com.capstone.explorin.presentation.customview.CustomPasswordEditText
 import com.google.android.material.button.MaterialButton
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
-
+@AndroidEntryPoint
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
-    private val loginViewModel: LoginViewModel by viewModels()
+    private val loginViewModel by viewModels<LoginViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,13 +30,20 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
         supportActionBar?.hide()
 
+        lifecycleScope.launch {
+            loginViewModel.state.collect { uiState ->
+                Log.d("cek isLoading", uiState.isLoading.toString())
+                loadingStateIsToggled(uiState.isLoading)
+                errorStateIsToggled(uiState.isError)
+                successStateIsToggled(uiState.LoginResult)
+            }
+        }
         setUpUI()
     }
 
     private fun setUpUI() {
-//        buttonClicked()
-//        playAnimation()
-//        observeData()
+        buttonClicked()
+        observeData()
     }
 
     private fun buttonClicked() {
@@ -58,6 +67,30 @@ class LoginActivity : AppCompatActivity() {
 
                 Toast.makeText(this, R.string.login_invalid, Toast.LENGTH_SHORT).show()
             }
+        }
+    }
+
+    private fun observeData() {
+    }
+
+    private fun successStateIsToggled(loginResult: LoginResponse?) {
+        if (loginResult?.loginResult != null){
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+    }
+
+    private fun loadingStateIsToggled(value: Boolean) {
+        binding.apply {
+            val loadingState = binding.progressBar
+            loadingState.visibility = if (value) View.VISIBLE else View.GONE
+        }
+    }
+
+    private fun errorStateIsToggled(value: Boolean) {
+        if (value) {
+            Toast.makeText(this, getString(R.string.login_invalid), Toast.LENGTH_LONG).show()
         }
     }
 }
