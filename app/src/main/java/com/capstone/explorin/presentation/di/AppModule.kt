@@ -4,10 +4,13 @@ import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
+import com.capstone.explorin.data.datasource.local.room.ItineraryDao
 import com.capstone.explorin.data.datasource.remote.ApiService
 import com.capstone.explorin.data.datastore.UserPreferences
 import com.capstone.explorin.data.repository.AssetManager
+import com.capstone.explorin.data.repository.ItineraryRepositoryImpl
 import com.capstone.explorin.data.repository.UserRepositoryImpl
+import com.capstone.explorin.domain.repository.ItineraryRepository
 import com.capstone.explorin.domain.repository.UserRepository
 import dagger.Module
 import dagger.Provides
@@ -41,6 +44,14 @@ object AppModule {
         assetManager: AssetManager
     ): UserRepository {
         return UserRepositoryImpl(apiService, pref, assetManager)
+    }
+
+    @Provides
+    @Singleton
+    fun provideItineraryRepository(
+        itineraryDao: ItineraryDao
+    ): ItineraryRepository {
+        return ItineraryRepositoryImpl(itineraryDao)
     }
 
     @Provides

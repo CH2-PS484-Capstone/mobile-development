@@ -20,9 +20,6 @@ class LoginViewModel @Inject constructor(
     private val _state = MutableStateFlow(LoginUiState())
     val state: StateFlow<LoginUiState> = _state
 
-    private val _isLoading = MutableStateFlow<Boolean>(false)
-    val isLoading: Flow<Boolean> = _isLoading
-
     fun login(email: String, password: String) {
         viewModelScope.launch {
             setError(false)

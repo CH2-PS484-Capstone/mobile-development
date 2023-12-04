@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -14,6 +15,7 @@ import com.capstone.explorin.data.datasource.remote.response.LoginResponse
 import com.capstone.explorin.databinding.ActivityLoginBinding
 import com.capstone.explorin.presentation.customview.CustomEmailEditText
 import com.capstone.explorin.presentation.customview.CustomPasswordEditText
+import com.capstone.explorin.presentation.ui.register.RegisterActivity
 import com.google.android.material.button.MaterialButton
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -43,10 +45,10 @@ class LoginActivity : AppCompatActivity() {
 
     private fun setUpUI() {
         buttonClicked()
-        observeData()
     }
 
     private fun buttonClicked() {
+        val toRegister: TextView = binding.goRegister
         val loginButton: MaterialButton = binding.btnLogin
         val emailEditText: CustomEmailEditText = binding.edtEmailInput
         val passwordEditText: CustomPasswordEditText = binding.edtPasswordInput
@@ -68,13 +70,18 @@ class LoginActivity : AppCompatActivity() {
                 Toast.makeText(this, R.string.login_invalid, Toast.LENGTH_SHORT).show()
             }
         }
+
+        toRegister.setOnClickListener {
+            val goRegister = Intent(this@LoginActivity, RegisterActivity::class.java)
+            startActivity(goRegister)
+        }
+
+
     }
 
-    private fun observeData() {
-    }
 
     private fun successStateIsToggled(loginResult: LoginResponse?) {
-        if (loginResult?.loginResult != null){
+        if (loginResult?.loginResult != null) {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
