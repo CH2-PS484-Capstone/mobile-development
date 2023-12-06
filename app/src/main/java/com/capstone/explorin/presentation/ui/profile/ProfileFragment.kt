@@ -1,60 +1,76 @@
 package com.capstone.explorin.presentation.ui.profile
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
+import androidx.fragment.app.activityViewModels
 import com.capstone.explorin.R
+import com.capstone.explorin.databinding.FragmentProfileBinding
+import com.capstone.explorin.presentation.ui.login.LoginActivity
+import com.capstone.explorin.presentation.ui.profile.editprofile.EditProfileActivity
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [ProfileFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ProfileFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private var _binding: FragmentProfileBinding? = null
+    private val binding get() = _binding!!
+    private val viewModel: ProfileViewModel by activityViewModels()
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false)
+        _binding = FragmentProfileBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ProfileFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ProfileFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+    }
+
+    private fun navigateToSavedTripList() {
+        val intent = Intent(activity, EditProfileActivity::class.java)
+
+        startActivity(intent)
+    }
+
+    /** Logout Dialog
+
+    private fun showDialog() {
+        val alertDialogBuilder = AlertDialog.Builder(requireActivity())
+
+        alertDialogBuilder.setTitle(getString(R.string.action_logout))
+
+        alertDialogBuilder
+            .setMessage(getString(R.string.title_logout_question))
+            .setCancelable(false)
+            .setPositiveButton(
+                getString(R.string.action_logout_confirm)
+            ) { _, _ ->
+                viewModel.logout {
+                    activity?.finishAffinity()
+
+                    val intent = Intent(requireActivity(), LoginActivity::class.java)
+                    startActivity(intent)
                 }
             }
+            .setNegativeButton(
+                getString(R.string.action_no)
+            ) { dialog, _ ->
+                dialog.cancel()
+            }
+
+        val alertDialog: AlertDialog = alertDialogBuilder.create()
+
+        alertDialog.show()
     }
+
+    **/
+
 }

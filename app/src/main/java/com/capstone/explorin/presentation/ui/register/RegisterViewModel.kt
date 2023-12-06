@@ -6,12 +6,14 @@ import androidx.lifecycle.viewModelScope
 import com.capstone.explorin.data.datasource.remote.response.RegisterResponse
 
 import com.capstone.explorin.domain.repository.UserRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+@HiltViewModel
 class RegisterViewModel @Inject constructor(
     private val repo: UserRepository,
 ) : ViewModel() {

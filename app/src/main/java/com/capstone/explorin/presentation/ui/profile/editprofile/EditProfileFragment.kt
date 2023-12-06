@@ -1,4 +1,4 @@
-package com.capstone.explorin.presentation.ui.editprofile
+package com.capstone.explorin.presentation.ui.profile.editprofile
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

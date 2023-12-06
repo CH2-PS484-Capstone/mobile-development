@@ -46,3 +46,21 @@ data class ItineraryWithCityAndCategory(
     )
     val category: CategoryEntity
 )
+
+data class CategoryWithItinerary(
+    @Embedded val category: CategoryEntity,
+    @Relation(
+        parentColumn = "categoryId",
+        entityColumn = "categoryId"
+    )
+    val itineraries: List<ItineraryEntity>
+)
+
+data class CityWithItinerary(
+    @Embedded val city: CityEntity,
+    @Relation(
+        parentColumn = "cityId",
+        entityColumn = "cityId"
+    )
+    val itineraries: List<ItineraryEntity>
+)

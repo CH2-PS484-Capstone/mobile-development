@@ -1,5 +1,7 @@
 package com.capstone.explorin.data.repository
 
+import com.capstone.explorin.data.datasource.local.entity.CategoryWithItinerary
+import com.capstone.explorin.data.datasource.local.entity.CityWithItinerary
 import com.capstone.explorin.data.datasource.local.entity.ItineraryWithCityAndCategory
 import com.capstone.explorin.data.datasource.local.room.ItineraryDao
 import com.capstone.explorin.domain.repository.ItineraryRepository
@@ -13,7 +15,15 @@ class ItineraryRepositoryImpl @Inject constructor(
         return itineraryDao.getAllItineraries()
     }
 
-    override fun getItineraryById(itineraryId: Int): ItineraryWithCityAndCategory {
+    override suspend fun getItineraryById(itineraryId: Int): ItineraryWithCityAndCategory? {
         return itineraryDao.getItineraryById(itineraryId)
+    }
+
+    override suspend fun getCategoriesWithItineraries(): Flow<List<CategoryWithItinerary>?> {
+        return itineraryDao.getCategoriesWithItineraries()
+    }
+
+    override suspend fun getCitiesWithItineraries(): Flow<List<CityWithItinerary>?> {
+        return itineraryDao.getCitiesWithItineraries()
     }
 }

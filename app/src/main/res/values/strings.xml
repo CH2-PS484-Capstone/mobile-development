@@ -51,4 +51,8 @@
     <string name="password_none">Kata sandi tidak boleh kosong</string>
     <string name="login_invalid">Login gagal. Periksa kembali email dan password kamu.</string>
     <string name="register_invalid">Register gagal. Periksa kembali nama, email atau password kamu.</string>
+    <string name="action_logout">Logout</string>
+    <string name="title_logout_question">Keluar dari akun?</string>
+    <string name="action_logout_confirm">Ya, keluar</string>
+    <string name="action_no">Tidak</string>
 </resources>
