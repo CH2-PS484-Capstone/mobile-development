@@ -75,7 +75,7 @@
         app:layout_constraintTop_toBottomOf="@id/rv_category" />
 
     <TextView
-        android:id="@+id/tv_seeall"
+        android:id="@+id/tv_see_popular"
         style="@style/LR12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -99,5 +99,42 @@
         app:layout_constraintTop_toBottomOf="@id/tv_populer"
         tools:itemCount="5"
         tools:listitem="@layout/item_itinerary_list" />
+
+    <TextView
+        android:id="@+id/tv_city"
+        style="@style/MSB20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/city"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rv_itinerary" />
+
+    <TextView
+        android:id="@+id/tv_see_city"
+        style="@style/LR12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:text="@string/see_all"
+        android:textColor="@color/primary_500"
+        app:layout_constraintBottom_toBottomOf="@id/tv_city"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_city" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_city"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_city"
+        tools:itemCount="5"
+        tools:listitem="@layout/item_city" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
