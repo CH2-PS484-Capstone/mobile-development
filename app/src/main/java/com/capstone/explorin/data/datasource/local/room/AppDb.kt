@@ -17,23 +17,23 @@ import com.capstone.explorin.data.datasource.local.entity.UserEntity
 abstract class AppDb: RoomDatabase() {
     abstract fun itineraryDao(): ItineraryDao
 
-    companion object {
-        @Volatile
-        private var INSTANCE: AppDb? = null
-
-        @JvmStatic
-        fun getDatabase(context: Context): AppDb {
-            if (INSTANCE == null) {
-                synchronized(AppDb::class) {
-                    INSTANCE = Room.databaseBuilder(
-                        context.applicationContext,
-                        AppDb::class.java,
-                        "explorin_db"
-                    ).build()
-                }
-            }
-            return INSTANCE as AppDb
-        }
-    }
+//    companion object {
+//        @Volatile
+//        private var INSTANCE: AppDb? = null
+//
+//        @JvmStatic
+//        fun getDatabase(context: Context): AppDb {
+//            if (INSTANCE == null) {
+//                synchronized(AppDb::class) {
+//                    INSTANCE = Room.databaseBuilder(
+//                        context.applicationContext,
+//                        AppDb::class.java,
+//                        "explorin_db"
+//                    ).build()
+//                }
+//            }
+//            return INSTANCE as AppDb
+//        }
+//    }
 
 }

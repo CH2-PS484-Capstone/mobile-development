@@ -24,11 +24,11 @@ interface ItineraryDao {
 
     @Transaction
     @Query("SELECT * FROM category")
-    suspend fun getCategoriesWithItineraries(): Flow<List<CategoryWithItinerary>?>
+    fun getCategoriesWithItineraries(): Flow<List<CategoryWithItinerary>?>
 
     @Transaction
     @Query("SELECT * FROM city")
-    suspend fun getCitiesWithItineraries(): Flow<List<CityWithItinerary>>
+    fun getCitiesWithItineraries(): Flow<List<CityWithItinerary>>
 
     @Transaction
     @Query("SELECT * FROM user WHERE id = :id")

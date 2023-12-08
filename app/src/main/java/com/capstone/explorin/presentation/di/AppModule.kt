@@ -4,6 +4,8 @@ import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
+import androidx.room.Room
+import com.capstone.explorin.data.datasource.local.room.AppDb
 import com.capstone.explorin.data.datasource.local.room.ItineraryDao
 import com.capstone.explorin.data.datasource.remote.ApiService
 import com.capstone.explorin.data.datastore.UserPreferences
@@ -59,4 +61,19 @@ object AppModule {
         @ApplicationContext
         context: Context
     ): Context = context
+
+    @Provides
+    fun provideItineraryDao(appDb:AppDb): ItineraryDao {
+        return appDb.itineraryDao()
+    }
+
+    @Provides
+    @Singleton
+    fun provideAppDatabase(@ApplicationContext appContext: Context): AppDb {
+        return Room.databaseBuilder(
+            appContext,
+            AppDb::class.java,
+            "explorin_db"
+        ).build()
+    }
 }

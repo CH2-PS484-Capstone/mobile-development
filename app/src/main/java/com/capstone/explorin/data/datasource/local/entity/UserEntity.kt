@@ -24,7 +24,7 @@ data class UserEntity(
     @ColumnInfo(name = "phone_number")
     var phoneNumber: String? = null,
 
-    @ColumnInfo(name = "city")
+    @ColumnInfo(name = "city_id")
     var cityId: Int = 0,
 
     @ColumnInfo(name = "dob")
@@ -37,7 +37,7 @@ data class UserEntity(
 data class UserWithCity(
     @Embedded val user: UserEntity,
     @Relation(
-        parentColumn = "cityId",
+        parentColumn = "city_id",
         entityColumn = "cityId"
     )
     val city: CityEntity,
