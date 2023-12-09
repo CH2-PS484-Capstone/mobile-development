@@ -1,140 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/civ_profile"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="20dp"
-        app:layout_constraintBottom_toTopOf="@id/search_bar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:src="@mipmap/ic_launcher_round" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/civ_profile"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="20dp"
+            app:layout_constraintBottom_toTopOf="@id/search_bar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@mipmap/ic_launcher_round" />
 
-    <TextView
-        android:id="@+id/tv_profile"
-        style="@style/LR16"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="10dp"
-        app:layout_constraintBottom_toBottomOf="@id/civ_profile"
-        app:layout_constraintStart_toEndOf="@id/civ_profile"
-        app:layout_constraintTop_toTopOf="@id/civ_profile"
-        tools:text="@string/name" />
+        <TextView
+            android:id="@+id/tv_profile"
+            style="@style/LR16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            app:layout_constraintBottom_toBottomOf="@id/civ_profile"
+            app:layout_constraintStart_toEndOf="@id/civ_profile"
+            app:layout_constraintTop_toTopOf="@id/civ_profile"
+            tools:text="@string/name" />
 
-    <Button
-        android:id="@+id/btn_notif"
-        style="?attr/materialIconButtonStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="35dp"
-        android:layout_marginEnd="20dp"
-        app:icon="@drawable/ic_notif"
-        app:iconSize="30dp"
-        app:iconTint="@color/primary_500"
-        app:layout_constraintBottom_toBottomOf="@id/tv_profile"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/tv_profile" />
-
-
-    <com.google.android.material.search.SearchBar
-        android:id="@+id/search_bar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/searchbar_color"
-        android:hint="@string/where_to_go"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/civ_profile"
-        app:navigationIcon="@drawable/ic_search" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_category"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/search_bar"
-        tools:listitem="@layout/item_category" />
-
-    <TextView
-        android:id="@+id/tv_populer"
-        style="@style/MSB20"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/populer"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rv_category" />
-
-    <TextView
-        android:id="@+id/tv_see_popular"
-        style="@style/LR12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:text="@string/see_all"
-        android:textColor="@color/primary_500"
-        app:layout_constraintBottom_toBottomOf="@id/tv_populer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/tv_populer" />
+        <Button
+            android:id="@+id/btn_notif"
+            style="?attr/materialIconButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginEnd="20dp"
+            app:icon="@drawable/ic_notif"
+            app:iconSize="30dp"
+            app:iconTint="@color/primary_500"
+            app:layout_constraintBottom_toBottomOf="@id/tv_profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_profile" />
 
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_itinerary"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="12dp"
-        android:orientation="horizontal"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_populer"
-        tools:itemCount="5"
-        tools:listitem="@layout/item_itinerary_list" />
+        <com.google.android.material.search.SearchBar
+            android:id="@+id/search_bar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/searchbar_color"
+            android:hint="@string/where_to_go"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/civ_profile"
+            app:navigationIcon="@drawable/ic_search" />
 
-    <TextView
-        android:id="@+id/tv_city"
-        style="@style/MSB20"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/city"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rv_itinerary" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_category"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/search_bar"
+            tools:listitem="@layout/item_category" />
 
-    <TextView
-        android:id="@+id/tv_see_city"
-        style="@style/LR12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:text="@string/see_all"
-        android:textColor="@color/primary_500"
-        app:layout_constraintBottom_toBottomOf="@id/tv_city"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/tv_city" />
+        <TextView
+            android:id="@+id/tv_populer"
+            style="@style/MSB20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/populer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rv_category" />
+
+        <TextView
+            android:id="@+id/tv_see_popular"
+            style="@style/LR12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:text="@string/see_all"
+            android:textColor="@color/primary_500"
+            app:layout_constraintBottom_toBottomOf="@id/tv_populer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_populer" />
 
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_city"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="12dp"
-        android:orientation="horizontal"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_city"
-        tools:itemCount="5"
-        tools:listitem="@layout/item_city" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_itinerary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_populer"
+            tools:itemCount="5"
+            tools:listitem="@layout/item_itinerary_list" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tv_city"
+            style="@style/MSB20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/city"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rv_itinerary" />
+
+        <TextView
+            android:id="@+id/tv_see_city"
+            style="@style/LR12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:text="@string/see_all"
+            android:textColor="@color/primary_500"
+            app:layout_constraintBottom_toBottomOf="@id/tv_city"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_city" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_city"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_city"
+            tools:itemCount="5"
+            tools:listitem="@layout/item_city" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

@@ -12,7 +12,11 @@ import androidx.lifecycle.lifecycleScope
 import com.capstone.explorin.R
 import com.capstone.explorin.databinding.FragmentHomeBinding
 import com.capstone.explorin.domain.model.Category
+import com.capstone.explorin.domain.model.City
+import com.capstone.explorin.domain.model.Itinerary
 import com.capstone.explorin.presentation.adapter.CategoryAdapter
+import com.capstone.explorin.presentation.adapter.CityAdapter
+import com.capstone.explorin.presentation.adapter.ItineraryAdapter
 import com.capstone.explorin.presentation.ui.login.LoginActivity
 import kotlinx.coroutines.launch
 
@@ -36,16 +40,20 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel.getCategories()
+        viewModel.getPopular()
+        viewModel.getCities()
 
         lifecycleScope.launch {
             viewModel.state.collect { state ->
-                val stateData = state.categories.isEmpty()
+                val stateData = state.categories.isEmpty() && state.recommendations.isEmpty() && state.city.isEmpty()
                 loadingStateIsToggled(stateData)
                 errorStateIsToggled(state.isError)
 
                 binding?.detailContent?.root?.visibility = if ((!stateData || state.isLoading) && !state.isError) View.VISIBLE else View.GONE
 
                 setCategories(state.categories)
+                setRecommendations(state.recommendations)
+                setCities(state.city)
             }
         }
     }
@@ -79,6 +87,26 @@ class HomeFragment : Fragment() {
                 startActivity(intent)
             }
         })
+    }
+
+    private fun setRecommendations(popular: List<Itinerary>) {
+        val adapter = ItineraryAdapter()
+        adapter.submitList(popular)
+
+        binding?.detailContent?.apply {
+            rvItinerary.adapter = adapter
+        }
+
+    }
+
+    private fun setCities(cities: List<City>) {
+        val adapter = CityAdapter()
+        adapter.submitList(cities)
+
+        binding?.detailContent?.apply {
+            rvCity.adapter = adapter
+        }
+
     }
 
 }
