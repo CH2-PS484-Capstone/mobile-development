@@ -34,16 +34,29 @@ class ProfileFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        navigateToSavedTripList()
+        binding.apply {
+//            stateError.button.setOnClickListener {
+//                viewModel.getAccount()
+//            }
+
+            profileContent.apply {
+                editProfile.setOnClickListener {
+                    navigateToEditProfile()
+                }
+
+                actionLogout.setOnClickListener {
+                    showDialog()
+                }
+            }
+        }
     }
 
-    private fun navigateToSavedTripList() {
+    private fun navigateToEditProfile() {
         val intent = Intent(activity, EditProfileActivity::class.java)
 
         startActivity(intent)
     }
 
-    /** Logout Dialog
 
     private fun showDialog() {
         val alertDialogBuilder = AlertDialog.Builder(requireActivity())
@@ -56,12 +69,12 @@ class ProfileFragment : Fragment() {
             .setPositiveButton(
                 getString(R.string.action_logout_confirm)
             ) { _, _ ->
-                viewModel.logout {
-                    activity?.finishAffinity()
-
-                    val intent = Intent(requireActivity(), LoginActivity::class.java)
-                    startActivity(intent)
-                }
+//                viewModel.logout {
+//                    activity?.finishAffinity()
+//
+//                    val intent = Intent(requireActivity(), LoginActivity::class.java)
+//                    startActivity(intent)
+//                }
             }
             .setNegativeButton(
                 getString(R.string.action_no)
@@ -74,6 +87,5 @@ class ProfileFragment : Fragment() {
         alertDialog.show()
     }
 
-    **/
 
 }

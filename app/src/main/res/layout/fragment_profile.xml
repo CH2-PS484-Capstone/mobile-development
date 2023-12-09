@@ -48,7 +48,7 @@
             tools:visibility="invisible" />
 
         <include
-            android:id="@+id/account_content"
+            android:id="@+id/profile_content"
             layout="@layout/content_profile"
             android:layout_width="0dp"
             android:layout_height="0dp"
