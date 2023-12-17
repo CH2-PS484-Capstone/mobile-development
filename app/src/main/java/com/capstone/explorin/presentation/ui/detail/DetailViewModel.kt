@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.capstone.explorin.domain.model.Category
+import com.capstone.explorin.domain.model.Gallery
 import com.capstone.explorin.domain.model.Itinerary
 import com.capstone.explorin.domain.model.Position
 import com.capstone.explorin.domain.repository.ItineraryRepository
@@ -27,7 +28,7 @@ class DetailViewModel : ViewModel(
             isLoading(true)
             isError(false)
 
-            val fakeCity = detailItinerary()
+            val fakeCity = detailItinerary(id)
             setDetail(fakeCity)
 
             isLoading(false)
@@ -54,16 +55,31 @@ class DetailViewModel : ViewModel(
 
     /** DUMMY DATA **/
 
-    private fun detailItinerary(): Itinerary {
-        return Itinerary(
-            id = 1,
-            name = "Candi Borobudur",
-            category = Category(idCategory = 1, iconCategory = "https://cdn.icon-icons.com/icons2/1894/PNG/512/iconfinder-tempaltaaaeas-3305213_120860.png", nameCategory = "Alam"),
-            image = "https://backoffice.konstruksiindo.id/images/posts/large/1689666990_bb8391f730ba479baf81.jpeg",
-            description = "Candi Buddha terbesar di dunia, terletak di Magelang, Jawa Tengah.",
-            location = "Yogyakarta",
-            position = Position(long = 7.7520, lat = 110.4916)
-        )
+    private fun detailItinerary(id: Int): Itinerary {
+        return when (id) {
+            1 -> {
+                Itinerary(
+                    id = 1,
+                    name = "Candi Borobudur",
+                    category = Category(idCategory = 1, iconCategory = "https://cdn.icon-icons.com/icons2/1894/PNG/512/iconfinder-tempaltaaaeas-3305213_120860.png", nameCategory = "Alam"),
+                    image = "https://backoffice.konstruksiindo.id/images/posts/large/1689666990_bb8391f730ba479baf81.jpeg",
+                    description = "Candi Buddha terbesar di dunia, terletak di Magelang, Jawa Tengah.",
+                    location = "Yogyakarta",
+                    position = Position(long = 7.7520, lat = 110.4916),
+                    gallery = listOf(
+                        Gallery(
+                            id = 1,
+                            image = "https://backoffice.konstruksiindo.id/images/posts/large/1689666990_bb8391f730ba479baf81.jpeg"
+                        )
+                    )
+                )
+            }
+
+            else -> {
+                Itinerary(id = 10, name = "Default Name", category = Category(1, "", ""), image = "", description = "", location = "", position = Position())
+            }
+        }
+
     }
 
 //    private fun setItinerary(itinerary: Itinerary) {

@@ -11,6 +11,7 @@ data class Itinerary(
     val category: Category,
     val image: String,
     val description: String,
+    val gallery: List<Gallery>? = null,
     val location: String,
     val position: Position,
 ) : Parcelable
