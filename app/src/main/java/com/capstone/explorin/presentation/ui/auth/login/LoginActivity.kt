@@ -1,4 +1,4 @@
-package com.capstone.explorin.presentation.ui.login
+package com.capstone.explorin.presentation.ui.auth.login
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -15,7 +15,8 @@ import com.capstone.explorin.data.datasource.remote.response.LoginResponse
 import com.capstone.explorin.databinding.ActivityLoginBinding
 import com.capstone.explorin.presentation.customview.CustomEmailEditText
 import com.capstone.explorin.presentation.customview.CustomPasswordEditText
-import com.capstone.explorin.presentation.ui.register.RegisterActivity
+import com.capstone.explorin.presentation.ui.auth.AuthViewModel
+import com.capstone.explorin.presentation.ui.auth.register.RegisterActivity
 import com.google.android.material.button.MaterialButton
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -24,7 +25,7 @@ import kotlinx.coroutines.launch
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
-    private val loginViewModel by viewModels<LoginViewModel>()
+    private val loginViewModel by viewModels<AuthViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,7 +34,7 @@ class LoginActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
         lifecycleScope.launch {
-            loginViewModel.state.collect { uiState ->
+            loginViewModel.loginstate.collect { uiState ->
                 Log.d("cek isLoading", uiState.isLoading.toString())
                 loadingStateIsToggled(uiState.isLoading)
                 errorStateIsToggled(uiState.isError)
@@ -74,6 +75,7 @@ class LoginActivity : AppCompatActivity() {
         toRegister.setOnClickListener {
             val goRegister = Intent(this@LoginActivity, RegisterActivity::class.java)
             startActivity(goRegister)
+            finish()
         }
 
 

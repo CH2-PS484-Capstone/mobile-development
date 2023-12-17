@@ -15,6 +15,8 @@ interface UserRepository {
     suspend fun logout(): Flow<Result<LogoutResponse>>
     suspend fun saveAccessToken(token: String)
     suspend fun removeAccessToken()
+    fun getLoginSession(): Flow<Boolean>
+    suspend fun saveLoginSession(session: Boolean)
     fun getAccessToken(): Flow<String?>
 //    suspend fun getProfile(): Flow<Result<AccountResponse>>
 }

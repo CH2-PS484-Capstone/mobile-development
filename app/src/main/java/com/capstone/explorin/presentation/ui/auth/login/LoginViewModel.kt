@@ -1,4 +1,4 @@
-package com.capstone.explorin.presentation.ui.login
+package com.capstone.explorin.presentation.ui.auth.login
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

@@ -1,4 +1,4 @@
-package com.capstone.explorin.presentation.ui.login
+package com.capstone.explorin.presentation.ui.auth.login
 
 import com.capstone.explorin.data.datasource.remote.response.LoginResponse
 

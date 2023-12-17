@@ -78,6 +78,9 @@
         <item name="boxCornerRadiusTopStart">20dp</item>
         <item name="boxStrokeWidth">0dp</item>
         <item name="android:background">@drawable/input_text_bg</item>
+        <item name="boxStrokeColor">@color/primary_500</item>
+        <item name="boxStrokeErrorColor">@color/red</item>
+        <item name="endIconTint">@color/primary_500</item>
     </style>
 
     <style name="ButtonStyle" parent="Widget.Material3.Button">

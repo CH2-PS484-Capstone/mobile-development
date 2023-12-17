@@ -51,9 +51,12 @@ object AppModule {
     @Provides
     @Singleton
     fun provideItineraryRepository(
-        itineraryDao: ItineraryDao
+        apiService: ApiService,
+        itineraryDao: ItineraryDao,
+        pref: UserPreferences,
+        assetManager: AssetManager
     ): ItineraryRepository {
-        return ItineraryRepositoryImpl(itineraryDao)
+        return ItineraryRepositoryImpl(apiService, itineraryDao, pref, assetManager)
     }
 
     @Provides

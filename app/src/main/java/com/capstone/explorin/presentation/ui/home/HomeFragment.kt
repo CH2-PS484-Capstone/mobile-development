@@ -17,7 +17,9 @@ import com.capstone.explorin.domain.model.Itinerary
 import com.capstone.explorin.presentation.adapter.CategoryAdapter
 import com.capstone.explorin.presentation.adapter.CityAdapter
 import com.capstone.explorin.presentation.adapter.ItineraryAdapter
-import com.capstone.explorin.presentation.ui.login.LoginActivity
+import com.capstone.explorin.presentation.ui.auth.login.LoginActivity
+import com.capstone.explorin.presentation.ui.detail.DetailActivity
+import com.capstone.explorin.presentation.ui.detail.DetailFragment
 import kotlinx.coroutines.launch
 
 class HomeFragment : Fragment() {
@@ -39,6 +41,14 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        setUpUI()
+    }
+
+    private fun setUpUI() {
+        provideData()
+    }
+
+    private fun provideData() {
         viewModel.getCategories()
         viewModel.getPopular()
         viewModel.getCities()
@@ -71,14 +81,14 @@ class HomeFragment : Fragment() {
     }
 
     private fun setCategories(categories: List<Category>) {
-        val adapter = CategoryAdapter()
-        adapter.submitList(categories)
+        val categoryAdapter = CategoryAdapter()
+        categoryAdapter.submitList(categories)
 
         binding?.detailContent?.apply {
-            rvCategory.adapter = adapter
+            rvCategory.adapter = categoryAdapter
         }
 
-        adapter.setOnItemClickCallback(object : CategoryAdapter.OnItemClickCallback {
+        categoryAdapter.setOnItemClickCallback(object : CategoryAdapter.OnItemClickCallback {
             override fun onItemClicked(name: String) {
                 val intent = Intent(requireActivity(), LoginActivity::class.java).apply {
                     putExtra("category", name)
@@ -90,12 +100,25 @@ class HomeFragment : Fragment() {
     }
 
     private fun setRecommendations(popular: List<Itinerary>) {
-        val adapter = ItineraryAdapter()
-        adapter.submitList(popular)
+        val recommendationAdapter = ItineraryAdapter()
+        recommendationAdapter.submitList(popular)
 
         binding?.detailContent?.apply {
-            rvItinerary.adapter = adapter
+            rvItinerary.adapter = recommendationAdapter
         }
+
+        recommendationAdapter.setOnItemClickCallback(object : ItineraryAdapter.OnItemClickCallback {
+            override fun onItemClicked(data: Itinerary) {
+                val intent = Intent(requireActivity(), DetailActivity::class.java).apply {
+                    putExtra("id", data.id)
+                }
+
+                startActivity(intent)
+            }
+
+        })
+
+
 
     }
 

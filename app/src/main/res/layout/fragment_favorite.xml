@@ -52,7 +52,7 @@
             tools:visibility="invisible" />
 
         <include
-            android:id="@+id/account_content"
+            android:id="@+id/detail_content"
             layout="@layout/content_favorite"
             android:layout_width="0dp"
             android:layout_height="0dp"

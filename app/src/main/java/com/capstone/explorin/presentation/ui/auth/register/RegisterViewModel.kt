@@ -1,4 +1,4 @@
-package com.capstone.explorin.presentation.ui.register
+package com.capstone.explorin.presentation.ui.auth.register
 
 
 import androidx.lifecycle.ViewModel
@@ -24,6 +24,7 @@ class RegisterViewModel @Inject constructor(
     fun registerUsers(name:String, email:String, password : String){
         viewModelScope.launch {
             isLoading(true)
+            isError(false)
 
             repo.register(name,email,password).collect { result ->
                 isLoading(false)
@@ -50,7 +51,7 @@ class RegisterViewModel @Inject constructor(
     }
     private fun registerSuccess(value : RegisterResponse){
         _state.update {
-            it.copy(registerResult = value)
+            it.copy(result = value)
         }
     }
 

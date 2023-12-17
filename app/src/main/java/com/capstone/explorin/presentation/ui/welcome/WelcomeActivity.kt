@@ -7,8 +7,8 @@ import androidx.activity.viewModels
 import com.capstone.explorin.R
 import com.capstone.explorin.data.datastore.UserPreferences
 import com.capstone.explorin.databinding.ActivityWelcomeBinding
-import com.capstone.explorin.presentation.ui.login.LoginActivity
-import com.capstone.explorin.presentation.ui.login.LoginViewModel
+import com.capstone.explorin.presentation.ui.auth.login.LoginActivity
+import com.capstone.explorin.presentation.ui.auth.login.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 
