@@ -18,6 +18,9 @@
         android:theme="@style/Theme.Explorin"
         tools:targetApi="31">
         <activity
+            android:name=".presentation.ui.view360.View360Activity"
+            android:exported="false" />
+        <activity
             android:name=".presentation.ui.detail.DetailActivity"
             android:exported="false"
             android:label="@string/title_activity_detail"
@@ -38,42 +41,43 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyAVqJMW6q3QN3iJopgXBJ1gEd0qJSoeSu4" />
+            android:value="{MAPS_API_KEY}" />
 
         <activity
             android:name=".presentation.ui.auth.register.RegisterActivity"
             android:exported="false" />
         <activity
             android:name=".presentation.ui.auth.login.LoginActivity"
-            android:exported="true" >
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
+            android:exported="true">
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity
             android:name=".presentation.ui.welcome.WelcomeActivity"
             android:exported="false">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustPan">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

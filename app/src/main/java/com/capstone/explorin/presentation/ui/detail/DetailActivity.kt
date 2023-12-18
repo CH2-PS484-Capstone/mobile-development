@@ -8,7 +8,10 @@ import android.content.res.Resources
 import android.location.Location
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.Settings
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
@@ -27,6 +30,7 @@ import com.capstone.explorin.domain.model.Itinerary
 import com.capstone.explorin.presentation.adapter.CategoryAdapter
 import com.capstone.explorin.presentation.adapter.GalleryAdapter
 import com.capstone.explorin.presentation.ui.auth.login.LoginActivity
+import com.capstone.explorin.presentation.ui.view360.View360Activity
 import com.capstone.explorin.presentation.utils.LocationConverter
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
@@ -69,6 +73,7 @@ class DetailActivity : AppCompatActivity(), OnMapReadyCallback {
     private fun setUpUI() {
         getData()
         provideData()
+        btnClicked()
     }
 
     private fun provideData() {
@@ -122,35 +127,28 @@ class DetailActivity : AppCompatActivity(), OnMapReadyCallback {
 
     }
 
-    private fun setDataAdapter(data : List<Gallery>) {
-//        binding.detailContent.apply {
-//            rvGallery.layoutManager = LinearLayoutManager(this@DetailActivity)
-//
-//            val adapter = GalleryAdapter(data)
-//            adapter.setOnItemClickCallback(object : GuideAdapter.OnItemClickCallback {
-//                override fun onItemClicked(guide: Guide) {
-//                    showGuide(guide)
-//                }
-//            })
-//        }
+    private fun btnClicked() {
+        binding.detailContent.btn360.setOnClickListener {
+            val data = viewModel.state.value.itinerary
+            data?.let {
+                val intent = Intent(this@DetailActivity, View360Activity::class.java)
+                intent.putExtra("id", it.id)
+                intent.putExtra("name", it.name)
+                intent.putExtra("lat", it.position.lat)
+                intent.putExtra("long", it.position.long)
+                startActivity(intent)
+            }
+        }
 
+    }
+
+    private fun setDataAdapter(data : List<Gallery>) {
         val galleryAdapter = GalleryAdapter()
         galleryAdapter.submitList(data)
 
         binding.detailContent.apply {
             rvGallery.adapter = galleryAdapter
         }
-
-//        galleryAdapter.setOnItemClickCallback(object : GalleryAdapter.OnItemClickCallback {
-//            override fun onItemClicked(name: String) {
-//                val intent = Intent(requireActivity(), LoginActivity::class.java).apply {
-//                    putExtra("category", name)
-//                }
-//
-//                startActivity(intent)
-//            }
-//        })
-
     }
 
 
@@ -199,38 +197,33 @@ class DetailActivity : AppCompatActivity(), OnMapReadyCallback {
         )
     }
 
-    private fun setMapStyle(mapsType: String) {
-        if (mapsType == "standard") {
-            try {
-                val success =
-                    mMap.setMapStyle(
-                        MapStyleOptions.loadRawResourceStyle(
-                            this,
-                            R.raw.maps_standard
-                        )
-                    )
-                if (!success) {
-                    Log.e(ContentValues.TAG, "Style parsing failed.")
-                }
-            } catch (exception: Resources.NotFoundException) {
-                Log.e(ContentValues.TAG, "Can't find style. Error: ", exception)
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.top_app_bar, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.favorite -> {
+                TODO()
+                true
             }
-        } else {
-            try {
-                val success =
-                    mMap.setMapStyle(
-                        MapStyleOptions.loadRawResourceStyle(
-                            this,
-                            R.raw.map_style
-                        )
-                    )
-                if (!success) {
-                    Log.e(ContentValues.TAG, "Style parsing failed.")
-                }
-            } catch (exception: Resources.NotFoundException) {
-                Log.e(ContentValues.TAG, "Can't find style. Error: ", exception)
-            }
+            else -> super.onOptionsItemSelected(item)
         }
     }
 
+    private fun getLocation() {
+        if (checkPermission(Manifest.permission.ACCESS_FINE_LOCATION) &&
+            checkPermission(Manifest.permission.ACCESS_COARSE_LOCATION)
+        ) {
+
+        }
+    }
+
+    private fun checkPermission(permission: String): Boolean {
+        return ContextCompat.checkSelfPermission(
+            this,
+            permission
+        ) == PackageManager.PERMISSION_GRANTED
+    }
 }

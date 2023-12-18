@@ -155,26 +155,24 @@
                 app:layout_constraintStart_toStartOf="@id/rv_gallery"
                 app:layout_constraintTop_toBottomOf="@id/rv_gallery" />
 
-                        <androidx.cardview.widget.CardView
-                            android:id="@+id/cv_maps"
-                            android:layout_width="match_parent"
-                            android:layout_height="250dp"
-                            android:layout_marginStart="20dp"
-                            android:layout_marginTop="12dp"
-                            android:layout_marginEnd="20dp"
-                            android:layout_marginBottom="12dp"
-                            app:layout_constraintEnd_toEndOf="@id/iv_itinerary"
-                            app:layout_constraintStart_toStartOf="@id/iv_itinerary"
-                            app:layout_constraintTop_toBottomOf="@id/tv_location">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_maps"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="12dp"
+                app:layout_constraintEnd_toEndOf="@id/iv_itinerary"
+                app:layout_constraintStart_toStartOf="@id/iv_itinerary"
+                app:layout_constraintTop_toBottomOf="@id/tv_location">
 
-                            <fragment
-                                android:id="@+id/map"
-                                android:name="com.google.android.gms.maps.SupportMapFragment"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                tools:context=".presentation.ui.detail.DetailActivity" />
+                <fragment
+                    android:id="@+id/map"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:context=".presentation.ui.detail.DetailActivity" />
 
-                        </androidx.cardview.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

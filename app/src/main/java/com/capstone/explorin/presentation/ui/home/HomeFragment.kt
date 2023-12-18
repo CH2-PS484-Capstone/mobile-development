@@ -22,7 +22,7 @@ import kotlinx.coroutines.launch
 
 class HomeFragment : Fragment() {
 
-    private var _binding : FragmentHomeBinding? = null
+    private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding
     private val viewModel: HomeViewModel by viewModels()
 
@@ -32,7 +32,7 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        _binding = FragmentHomeBinding.inflate(inflater,container,false)
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding?.root
     }
 
@@ -53,11 +53,13 @@ class HomeFragment : Fragment() {
 
         lifecycleScope.launch {
             viewModel.state.collect { state ->
-                val stateData = state.categories.isEmpty() && state.recommendations.isEmpty() && state.city.isEmpty()
+                val stateData =
+                    state.categories.isEmpty() && state.recommendations.isEmpty() && state.city.isEmpty()
                 loadingStateIsToggled(stateData)
                 errorStateIsToggled(state.isError)
 
-                binding?.detailContent?.root?.visibility = if ((!stateData || state.isLoading) && !state.isError) View.VISIBLE else View.GONE
+                binding?.detailContent?.root?.visibility =
+                    if ((!stateData || state.isLoading) && !state.isError) View.VISIBLE else View.GONE
 
                 setCategories(state.categories)
                 setRecommendations(state.recommendations)
@@ -115,7 +117,6 @@ class HomeFragment : Fragment() {
             }
 
         })
-
 
 
     }

@@ -25,9 +25,6 @@ class DetailViewModel : ViewModel(
 
 
     fun getDetailItinerary(id: Int) {
-
-
-
         viewModelScope.launch {
             isLoading(true)
             isError(false)
