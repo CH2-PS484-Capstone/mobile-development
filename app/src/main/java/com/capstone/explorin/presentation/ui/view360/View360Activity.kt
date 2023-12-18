@@ -3,6 +3,9 @@ package com.capstone.explorin.presentation.ui.view360
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
+import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.lifecycleScope
 import com.capstone.explorin.R
 import com.capstone.explorin.databinding.ActivityView360Binding
@@ -24,12 +27,22 @@ class View360Activity : AppCompatActivity(), OnStreetViewPanoramaReadyCallback {
         binding = ActivityView360Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-//        val itineraryId = intent.getIntExtra("id", 0)
+        val toolbar: Toolbar = binding.toolbar
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+
+        setUpUI(savedInstanceState)
+    }
+
+    private fun setUpUI(savedInstanceState: Bundle?) {
         val itineraryName = intent.getStringExtra("name")
         streetView = binding.detailContent.mapStreetView
         streetView.onCreate(savedInstanceState)
         streetView.getStreetViewPanoramaAsync(this)
         binding.detailContent.namaWisata.text = itineraryName
+        binding.toolbar.title = itineraryName
+
     }
 
     override fun onStreetViewPanoramaReady(panorama: StreetViewPanorama) {
@@ -42,6 +55,25 @@ class View360Activity : AppCompatActivity(), OnStreetViewPanoramaReadyCallback {
         panorama.isUserNavigationEnabled = true
         panorama.setPosition(LatLng(lat, long))
 
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.top_app_bar, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.favorite -> {
+                TODO()
+                true
+            }
+            android.R.id.home -> {
+                onBackPressedDispatcher.onBackPressed()
+                return true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 
     override fun onResume() {

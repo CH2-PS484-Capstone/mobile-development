@@ -208,6 +208,10 @@ class DetailActivity : AppCompatActivity(), OnMapReadyCallback {
                 TODO()
                 true
             }
+            android.R.id.home -> {
+                onBackPressedDispatcher.onBackPressed()
+                return true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }
