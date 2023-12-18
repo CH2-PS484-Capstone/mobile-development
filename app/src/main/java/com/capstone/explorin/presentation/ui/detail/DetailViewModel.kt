@@ -68,7 +68,7 @@ class DetailViewModel : ViewModel(
                     image = "https://backoffice.konstruksiindo.id/images/posts/large/1689666990_bb8391f730ba479baf81.jpeg",
                     description = "Candi Buddha terbesar di dunia, terletak di Magelang, Jawa Tengah.",
                     location = "Yogyakarta",
-                    position = Position(long = 7.7520, lat = 110.4916),
+                    position = Position(long = 110.204336, lat = -7.607994),
                     gallery = listOf(
                         Gallery(
                             id = 1,
@@ -77,7 +77,7 @@ class DetailViewModel : ViewModel(
                     )
                 )
             }
-
+            
             else -> {
                 Itinerary(id = 10, name = "Default Name", category = Category(1, "", ""), image = "", description = "", location = "", position = Position())
             }

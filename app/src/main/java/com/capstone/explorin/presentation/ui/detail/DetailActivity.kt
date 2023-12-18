@@ -192,7 +192,7 @@ class DetailActivity : AppCompatActivity(), OnMapReadyCallback {
 
         mMap.animateCamera(
             CameraUpdateFactory.newLatLngZoom(
-                locationZoom, 3f
+                locationZoom, 15f
             )
         )
     }
@@ -212,6 +212,8 @@ class DetailActivity : AppCompatActivity(), OnMapReadyCallback {
         }
     }
 
+    /** CHECK PERMISSION
+
     private fun getLocation() {
         if (checkPermission(Manifest.permission.ACCESS_FINE_LOCATION) &&
             checkPermission(Manifest.permission.ACCESS_COARSE_LOCATION)
@@ -226,4 +228,6 @@ class DetailActivity : AppCompatActivity(), OnMapReadyCallback {
             permission
         ) == PackageManager.PERMISSION_GRANTED
     }
+
+    **/
 }

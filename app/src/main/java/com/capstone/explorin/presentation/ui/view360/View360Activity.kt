@@ -30,7 +30,6 @@ class View360Activity : AppCompatActivity(), OnStreetViewPanoramaReadyCallback {
         streetView.onCreate(savedInstanceState)
         streetView.getStreetViewPanoramaAsync(this)
         binding.detailContent.namaWisata.text = itineraryName
-
     }
 
     override fun onStreetViewPanoramaReady(panorama: StreetViewPanorama) {
