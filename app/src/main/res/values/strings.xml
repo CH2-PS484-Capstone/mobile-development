@@ -104,4 +104,6 @@
     <string name="people_join">Orang</string>
     <string name="join">Gabung</string>
     <string name="message">Kirimi Pesan</string>
+    <string name="enter_message">Tulis Pesan</string>
+    <string name="send">Kirim</string>
 </resources>

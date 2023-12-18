@@ -10,10 +10,8 @@ class BuddiesActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityBuddiesBinding
     private val viewModel: BuddiesViewModel by viewModels()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityBuddiesBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_buddies)
     }
 }
