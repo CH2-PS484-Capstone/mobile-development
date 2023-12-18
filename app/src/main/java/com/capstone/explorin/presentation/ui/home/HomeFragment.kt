@@ -9,7 +9,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import com.capstone.explorin.R
 import com.capstone.explorin.databinding.FragmentHomeBinding
 import com.capstone.explorin.domain.model.Category
 import com.capstone.explorin.domain.model.City
@@ -19,7 +18,6 @@ import com.capstone.explorin.presentation.adapter.CityAdapter
 import com.capstone.explorin.presentation.adapter.ItineraryAdapter
 import com.capstone.explorin.presentation.ui.auth.login.LoginActivity
 import com.capstone.explorin.presentation.ui.detail.DetailActivity
-import com.capstone.explorin.presentation.ui.detail.DetailFragment
 import kotlinx.coroutines.launch
 
 class HomeFragment : Fragment() {

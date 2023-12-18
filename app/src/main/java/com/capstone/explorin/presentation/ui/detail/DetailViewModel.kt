@@ -20,6 +20,10 @@ class DetailViewModel : ViewModel(
     private val _state = MutableStateFlow(DetailUiState())
     val state: StateFlow<DetailUiState> = _state
 
+    private val _itinerary = MutableStateFlow<Itinerary?>(null)
+    val itinerary: StateFlow<Itinerary?> = _itinerary
+
+
     fun getDetailItinerary(id: Int) {
 
 
@@ -30,6 +34,8 @@ class DetailViewModel : ViewModel(
 
             val fakeCity = detailItinerary(id)
             setDetail(fakeCity)
+
+            _itinerary.value = fakeCity
 
             isLoading(false)
         }
