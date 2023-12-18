@@ -6,16 +6,13 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.widget.Toolbar
-import androidx.lifecycle.lifecycleScope
 import com.capstone.explorin.R
 import com.capstone.explorin.databinding.ActivityView360Binding
 import com.google.android.gms.maps.OnStreetViewPanoramaReadyCallback
 import com.google.android.gms.maps.StreetViewPanorama
 import com.google.android.gms.maps.StreetViewPanoramaView
 import com.google.android.gms.maps.model.LatLng
-import kotlinx.coroutines.launch
-import org.json.JSONException
-import org.json.JSONObject
+
 
 class View360Activity : AppCompatActivity(), OnStreetViewPanoramaReadyCallback {
     private lateinit var streetView: StreetViewPanoramaView

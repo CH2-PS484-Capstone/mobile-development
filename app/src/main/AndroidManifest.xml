@@ -18,6 +18,9 @@
         android:theme="@style/Theme.Explorin"
         tools:targetApi="31">
         <activity
+            android:name=".presentation.ui.buddies.BuddiesActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentation.ui.view360.View360Activity"
             android:exported="false" />
         <activity
@@ -50,12 +53,12 @@
             android:name=".presentation.ui.auth.login.LoginActivity"
             android:exported="true">
 
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
 
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".presentation.ui.welcome.WelcomeActivity"
@@ -72,11 +75,11 @@
             android:name=".MainActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustPan">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
     </application>
 

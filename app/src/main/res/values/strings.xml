@@ -100,4 +100,8 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
+    <string name="find_buddies">Cari teman perjalanan</string>
+    <string name="people_join">Orang</string>
+    <string name="join">Gabung</string>
+    <string name="message">Kirimi Pesan</string>
 </resources>

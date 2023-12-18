@@ -136,10 +136,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:animationDuration="2000"
                 android:orientation="horizontal"
-                android:spacing="10dp"
-                android:unselectedAlpha="50"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:layout_constraintStart_toStartOf="@id/tv_gallery"
                 app:layout_constraintTop_toBottomOf="@id/tv_gallery"
@@ -191,12 +188,23 @@
 
         <Button
             android:id="@+id/btn_360"
-            style="@style/ButtonStyle"
-            android:layout_width="326dp"
+            style="@style/Widget.Material3.Button"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/lato_bold"
             android:gravity="center"
             android:text="@string/see_360"
+            android:textSize="16sp"
+            android:layout_marginEnd="12dp"/>
+
+        <Button
+            android:id="@+id/btn_buddies"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato_bold"
+            android:gravity="center"
+            android:text="@string/find_buddies"
             android:textSize="16sp" />
     </LinearLayout>
 
