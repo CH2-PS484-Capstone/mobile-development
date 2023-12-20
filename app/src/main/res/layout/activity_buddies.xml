@@ -24,11 +24,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:menu="@menu/top_app_bar"
             app:navigationIcon="@drawable/ic_back"
             app:titleCentered="true"
             app:titleTextAppearance="@style/MSB20"
-            tools:title="Pantai Kuta" />
+            tools:title="Buddies" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <include
@@ -72,6 +71,7 @@
         layout="@layout/content_buddies"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginHorizontal="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

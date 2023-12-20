@@ -2,9 +2,11 @@ package com.capstone.explorin.presentation.ui.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.capstone.explorin.data.datasource.FakeDataGenerator
 import com.capstone.explorin.data.datasource.local.entity.CategoryEntity
 import com.capstone.explorin.data.datasource.local.entity.CityEntity
 import com.capstone.explorin.data.datasource.local.entity.ItineraryWithCityAndCategory
+import com.capstone.explorin.domain.model.BuddiesList
 import com.capstone.explorin.domain.model.Category
 import com.capstone.explorin.domain.model.City
 import com.capstone.explorin.domain.model.Itinerary
@@ -36,7 +38,7 @@ class HomeViewModel  : ViewModel() {
 //                }
 //            }
 
-            val fakeCategories = categoryData()
+            val fakeCategories = FakeDataGenerator.categoryData()
             setCategories(fakeCategories)
 
             isLoading(false)
@@ -48,8 +50,20 @@ class HomeViewModel  : ViewModel() {
             isLoading(true)
             isError(false)
 
-            val fakePopular = popularData()
+            val fakePopular = FakeDataGenerator.itineraryData()
             setItinerary(fakePopular)
+
+            isLoading(false)
+        }
+    }
+
+    fun getBuddies() {
+        viewModelScope.launch {
+            isLoading(true)
+            isError(false)
+
+            val fakeBuddies = FakeDataGenerator.buddiesData()
+            setBuddies(fakeBuddies)
 
             isLoading(false)
         }
@@ -60,7 +74,7 @@ class HomeViewModel  : ViewModel() {
             isLoading(true)
             isError(false)
 
-            val fakeCity = citiesData()
+            val fakeCity = FakeDataGenerator.citiesData()
             setCities(fakeCity)
 
             isLoading(false)
@@ -78,72 +92,15 @@ class HomeViewModel  : ViewModel() {
         }
     }
 
+
     /** # DUMMY DATA **/
-
-    private fun categoryData(): List<Category> {
-        return listOf(
-            Category(idCategory = 1, iconCategory = "https://cdn.icon-icons.com/icons2/1894/PNG/512/iconfinder-tempaltaaaeas-3305213_120860.png", nameCategory = "Alam"),
-            Category(idCategory = 2, iconCategory = "https://cdn.icon-icons.com/icons2/1894/PNG/512/iconfinder-tempaltaaaeas-3305213_120860.png", nameCategory = "Sejarah"),
-            Category(idCategory = 3, iconCategory = "https://cdn.icon-icons.com/icons2/1894/PNG/512/iconfinder-tempaltaaaeas-3305213_120860.png", nameCategory = "Pantai"),
-            Category(idCategory = 3, iconCategory = "https://cdn.icon-icons.com/icons2/1894/PNG/512/iconfinder-tempaltaaaeas-3305213_120860.png", nameCategory = "Pantai")
-        )
-    }
-
     private fun setCategories(categories: List<Category>) {
         _state.update {
             it.copy(categories = categories)
         }
     }
 
-    private fun popularData(): List<Itinerary> {
-        return listOf(
-            Itinerary(
-                id = 1,
-                name = "Candi Borobudur",
-                category = Category(idCategory = 1, iconCategory = "https://cdn.icon-icons.com/icons2/1894/PNG/512/iconfinder-tempaltaaaeas-3305213_120860.png", nameCategory = "Alam"),
-                image = "https://backoffice.konstruksiindo.id/images/posts/large/1689666990_bb8391f730ba479baf81.jpeg",
-                description = "Candi Buddha terbesar di dunia, terletak di Magelang, Jawa Tengah.",
-                location = "Yogyakarta",
-                position = Position(long = 110.204336, lat = -7.607994)
-            ),
-            Itinerary(
-                id = 2,
-                name = "Candi Borobudur",
-                category = Category(idCategory = 1, iconCategory = "https://cdn.icon-icons.com/icons2/1894/PNG/512/iconfinder-tempaltaaaeas-3305213_120860.png", nameCategory = "Alam"),
-                image = "https://backoffice.konstruksiindo.id/images/posts/large/1689666990_bb8391f730ba479baf81.jpeg",
-                description = "Candi Buddha terbesar di dunia, terletak di Magelang, Jawa Tengah.",
-                location = "Yogyakarta",
-                position = Position(long = 110.204336, lat = -7.607994)
-            ),
-            Itinerary(
-                id = 3,
-                name = "Candi Borobudur",
-                category = Category(idCategory = 1, iconCategory = "https://cdn.icon-icons.com/icons2/1894/PNG/512/iconfinder-tempaltaaaeas-3305213_120860.png", nameCategory = "Alam"),
-                image = "https://backoffice.konstruksiindo.id/images/posts/large/1689666990_bb8391f730ba479baf81.jpeg",
-                description = "Candi Buddha terbesar di dunia, terletak di Magelang, Jawa Tengah.",
-                location = "Yogyakarta",
-                position = Position(long = 110.204336, lat = -7.607994)
-            ),
-            Itinerary(
-                id = 4,
-                name = "Candi Borobudur",
-                category = Category(idCategory = 1, iconCategory = "https://cdn.icon-icons.com/icons2/1894/PNG/512/iconfinder-tempaltaaaeas-3305213_120860.png", nameCategory = "Alam"),
-                image = "https://backoffice.konstruksiindo.id/images/posts/large/1689666990_bb8391f730ba479baf81.jpeg",
-                description = "Candi Buddha terbesar di dunia, terletak di Magelang, Jawa Tengah.",
-                location = "Yogyakarta",
-                position = Position(long = 110.204336, lat = -7.607994)
-            ),
-            Itinerary(
-                id = 5,
-                name = "Candi Borobudur",
-                category = Category(idCategory = 1, iconCategory = "https://cdn.icon-icons.com/icons2/1894/PNG/512/iconfinder-tempaltaaaeas-3305213_120860.png", nameCategory = "Alam"),
-                image = "https://backoffice.konstruksiindo.id/images/posts/large/1689666990_bb8391f730ba479baf81.jpeg",
-                description = "Candi Buddha terbesar di dunia, terletak di Magelang, Jawa Tengah.",
-                location = "Yogyakarta",
-                position = Position(long = 110.204336, lat = -7.607994)
-            )
-        )
-    }
+
 
     private fun setItinerary(populars: List<Itinerary>) {
         _state.update {
@@ -151,34 +108,16 @@ class HomeViewModel  : ViewModel() {
         }
     }
 
-    private fun citiesData(): List<City> {
-        return listOf(
-            City(
-                idCity = 1,
-                imgCity = "https://discoveringsurabaya.files.wordpress.com/2015/09/landmark1.jpg",
-                nameCity = "Surabaya"
-            ),
-            City(
-                idCity = 1,
-                imgCity = "https://discoveringsurabaya.files.wordpress.com/2015/09/landmark1.jpg",
-                nameCity = "Surabaya"
-            ),
-            City(
-                idCity = 1,
-                imgCity = "https://discoveringsurabaya.files.wordpress.com/2015/09/landmark1.jpg",
-                nameCity = "Surabaya"
-            ),
-            City(
-                idCity = 1,
-                imgCity = "https://discoveringsurabaya.files.wordpress.com/2015/09/landmark1.jpg",
-                nameCity = "Surabaya"
-            ),
-        )
-    }
 
     private fun setCities(cities: List<City>) {
         _state.update {
             it.copy(city = cities)
+        }
+    }
+
+    private fun setBuddies(buddies: List<BuddiesList>) {
+        _state.update {
+            it.copy(buddies = buddies)
         }
     }
 
