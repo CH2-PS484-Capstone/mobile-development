@@ -6,6 +6,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import androidx.activity.viewModels
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
@@ -21,6 +22,7 @@ class DetailBuddiesActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailBuddiesBinding
     private val viewModel: DetailBuddiesViewModel by viewModels()
     private var itineraryId: Int? = null
+    private var isJoinButtonEnabled = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -107,14 +109,28 @@ class DetailBuddiesActivity : AppCompatActivity() {
 
     private fun btnClicked() {
         binding.detailContent.apply {
-
-//            itemItinerary.item.setOnClickListener {
-//                val intent = Intent(this@DetailBuddiesActivity, DetailActivity::class.java)
-//                startActivity(intent)
-//            }
-
-
+            btnJoin.setOnClickListener {
+                if (isJoinButtonEnabled) {
+                    showAlertDialog()
+                }
+            }
         }
+    }
+
+
+    private fun showAlertDialog() {
+        val builder = AlertDialog.Builder(this)
+        val alert = builder.create()
+        builder
+            .setTitle(getString(R.string.wait))
+            .setMessage(getString(R.string.join_description))
+            .setNegativeButton(getString(R.string.ok)) { _, _ ->
+                // Disable the button after pressing OK
+                isJoinButtonEnabled = false
+                binding.detailContent.btnJoin.isEnabled = false
+                alert.cancel()
+            }
+            .show()
     }
 
     private fun loadingStateIsToggled(value: Boolean) {

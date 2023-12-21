@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Explorin</string>
-    <string name="string_expand_your_exploration">Expand Your Exploration</string>
+    <string name="find_hidden_gems">Find your hidden gems</string>
     <string name="text_onboarding">Solo backpacker? Tourist? First time traveler? Anda selalu diterima di sini.</string>
     <string name="adventurer">Adventurer</string>
     <string name="mulai_petualanganmu">Mulai Petualanganmu</string>
@@ -108,4 +108,7 @@
     <string name="send">Kirim</string>
     <string name="people_joined">%d orang telah bergabung</string>
     <string name="find_your_buddies">Cari Buddies-mu</string>
+    <string name="join_description">Silahkan tunggu konfirmasi dari calon Buddies-mu</string>
+    <string name="ok">Ok</string>
+    <string name="wait">Bergabung dengan Buddies?</string>
 </resources>

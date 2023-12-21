@@ -47,7 +47,7 @@ class FakeDataGenerator {
                     ),
                     image = "https://backoffice.konstruksiindo.id/images/posts/large/1689666990_bb8391f730ba479baf81.jpeg",
                     description = "Candi Buddha terbesar di dunia, terletak di Magelang, Jawa Tengah.",
-                    location = "Yogyakarta",
+                    location = "Magelang",
                     position = Position(long = 110.204336, lat = -7.607994),
                 ),
                 Itinerary(
@@ -112,7 +112,7 @@ class FakeDataGenerator {
                         ),
                         image = "https://backoffice.konstruksiindo.id/images/posts/large/1689666990_bb8391f730ba479baf81.jpeg",
                         description = "Candi Buddha terbesar di dunia, terletak di Magelang, Jawa Tengah.",
-                        location = "Yogyakarta",
+                        location = "Magelang",
                         position = Position(long = 110.204336, lat = -7.607994),
                         gallery = listOf(
                             Gallery(
@@ -181,7 +181,7 @@ class FakeDataGenerator {
                         ),
                         image = "https://backoffice.konstruksiindo.id/images/posts/large/1689666990_bb8391f730ba479baf81.jpeg",
                         description = "Candi Buddha terbesar di dunia, terletak di Magelang, Jawa Tengah.",
-                        location = "Yogyakarta",
+                        location = "Magelang",
                         position = Position(long = 110.204336, lat = -7.607994)
                     ),
                     buddiesTitle = "Yok join guys -2 ke borobudur",
@@ -200,7 +200,7 @@ class FakeDataGenerator {
                         ),
                         image = "https://backoffice.konstruksiindo.id/images/posts/large/1689666990_bb8391f730ba479baf81.jpeg",
                         description = "Candi Buddha terbesar di dunia, terletak di Magelang, Jawa Tengah.",
-                        location = "Yogyakarta",
+                        location = "Magelang",
                         position = Position(long = 110.204336, lat = -7.607994)
                     ),
                     buddiesTitle = "Yok join guys -2 ke borobudur",
@@ -266,7 +266,7 @@ class FakeDataGenerator {
                     city = City(
                         idCity = 4,
                         imgCity = "https://discoveringsurabaya.files.wordpress.com/2015/09/landmark1.jpg",
-                        nameCity = "Yogyakarta"
+                        nameCity = "Magelang"
                     ),
                     dateOfBirth = "1992-12-08",
                     gender = "Female",
@@ -305,7 +305,7 @@ class FakeDataGenerator {
                             ),
                             image = "https://backoffice.konstruksiindo.id/images/posts/large/1689666990_bb8391f730ba479baf81.jpeg",
                             description = "Candi Buddha terbesar di dunia, terletak di Magelang, Jawa Tengah.",
-                            location = "Yogyakarta",
+                            location = "Magelang",
                             position = Position(long = 110.204336, lat = -7.607994)
                         ),
                         buddiesTitle = "Yok join guys -2 ke borobudur",
