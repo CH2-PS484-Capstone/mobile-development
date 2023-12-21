@@ -25,6 +25,7 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.LatLngBounds
 import com.google.android.gms.maps.model.MarkerOptions
+import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
 
 class DetailActivity : AppCompatActivity(), OnMapReadyCallback {
@@ -50,19 +51,23 @@ class DetailActivity : AppCompatActivity(), OnMapReadyCallback {
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
 
+
         setUpUI()
     }
 
     private fun setUpUI() {
         getData()
-        provideData()
         btnClicked()
     }
 
-    private fun provideData() {
-        val toolbar: Toolbar = binding.toolbar
+    private fun getData() {
+        itineraryId?.let { id ->
+            viewModel.getDetailItinerary(id)
+        }
+    }
 
-        lifecycleScope.launch {
+    private fun provideData() {
+        lifecycleScope.launch{
             viewModel.state.collect { state ->
                 loadingStateIsToggled(state.isLoading)
                 errorStateIsToggled(state.isError)
@@ -71,6 +76,7 @@ class DetailActivity : AppCompatActivity(), OnMapReadyCallback {
                     if (!state.isLoading && !state.isError) View.VISIBLE else View.GONE
 
                 state.itinerary?.let { data ->
+                    val toolbar: Toolbar = binding.toolbar
                     toolbar.title = data.name
                     setData(data)
                     data.gallery?.let { gallery -> setDataAdapter(gallery) }
@@ -78,15 +84,8 @@ class DetailActivity : AppCompatActivity(), OnMapReadyCallback {
                     if (::mMap.isInitialized) {
                         setMarker(data)
                     }
-
                 }
             }
-        }
-    }
-
-    private fun getData() {
-        itineraryId?.let { id ->
-            viewModel.getDetailItinerary(id)
         }
     }
 
@@ -105,9 +104,7 @@ class DetailActivity : AppCompatActivity(), OnMapReadyCallback {
             tvDescription.text = data.description
             tvCity.text = data.location
             tvCategoryName.text = data.category.nameCategory
-
         }
-
     }
 
     private fun btnClicked() {
@@ -139,7 +136,6 @@ class DetailActivity : AppCompatActivity(), OnMapReadyCallback {
         }
     }
 
-
     private fun loadingStateIsToggled(value: Boolean) {
         binding.apply {
             stateLoading.root.visibility = if (value) View.VISIBLE else View.GONE
@@ -154,7 +150,6 @@ class DetailActivity : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
-
         mMap.uiSettings.isZoomControlsEnabled = true
         provideData()
     }
@@ -176,7 +171,6 @@ class DetailActivity : AppCompatActivity(), OnMapReadyCallback {
             locationZoom = latLng
         }
 
-
         mMap.animateCamera(
             CameraUpdateFactory.newLatLngZoom(
                 locationZoom, 15f
@@ -189,38 +183,25 @@ class DetailActivity : AppCompatActivity(), OnMapReadyCallback {
         return true
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        lifecycleScope.cancel()
+    }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.favorite -> {
-                TODO()
+                // Handle favorite action here
                 true
             }
 
             android.R.id.home -> {
                 onBackPressedDispatcher.onBackPressed()
-                return true
+                true
             }
 
             else -> super.onOptionsItemSelected(item)
         }
     }
 
-    /** CHECK PERMISSION
-
-    private fun getLocation() {
-    if (checkPermission(Manifest.permission.ACCESS_FINE_LOCATION) &&
-    checkPermission(Manifest.permission.ACCESS_COARSE_LOCATION)
-    ) {
-
-    }
-    }
-
-    private fun checkPermission(permission: String): Boolean {
-    return ContextCompat.checkSelfPermission(
-    this,
-    permission
-    ) == PackageManager.PERMISSION_GRANTED
-    }
-
-     **/
 }

@@ -52,56 +52,30 @@ class FakeDataGenerator {
                 ),
                 Itinerary(
                     id = 2,
-                    name = "Candi Borobudur",
+                    name = "Weh Island",
                     category = Category(
-                        idCategory = 1,
-                        iconCategory = "https://cdn.icon-icons.com/icons2/1894/PNG/512/iconfinder-tempaltaaaeas-3305213_120860.png",
-                        nameCategory = "Alam"
+                        idCategory = 2,
+                        iconCategory = "https://static-00.iconduck.com/assets.00/beach-icon-512x441-ow4q6h9s.png",
+                        nameCategory = "Pantai"
                     ),
-                    image = "https://backoffice.konstruksiindo.id/images/posts/large/1689666990_bb8391f730ba479baf81.jpeg",
-                    description = "Candi Buddha terbesar di dunia, terletak di Magelang, Jawa Tengah.",
-                    location = "Yogyakarta",
-                    position = Position(long = 110.204336, lat = -7.607994)
+                    image = "https://okuselatan.disway.id/upload/35a83374bdf1245f05b6bde5085ac7ba.jpg",
+                    description = "Pulau Weh adalah tempat unik di Indonesia yang dihuni oleh penduduk asli dengan budaya campuran dan umat Islam yang taat. Pulau ini memiliki beberapa tempat menyelam paling terkenal di dunia, seperti Batee Tokong dan Kepulauan Sipadan.",
+                    location = "Aceh",
+                    position = Position(long = 3.066667, lat = -1.833333)
                 ),
                 Itinerary(
                     id = 3,
-                    name = "Candi Borobudur",
+                    name = "Tangkahan",
                     category = Category(
                         idCategory = 1,
                         iconCategory = "https://cdn.icon-icons.com/icons2/1894/PNG/512/iconfinder-tempaltaaaeas-3305213_120860.png",
                         nameCategory = "Alam"
                     ),
-                    image = "https://backoffice.konstruksiindo.id/images/posts/large/1689666990_bb8391f730ba479baf81.jpeg",
-                    description = "Candi Buddha terbesar di dunia, terletak di Magelang, Jawa Tengah.",
-                    location = "Yogyakarta",
-                    position = Position(long = 110.204336, lat = -7.607994)
+                    image = "https://pelitabaru.com/wp-content/uploads/2021/08/tangkahan.jpg",
+                    description = "Tangkahan adalah surga tersembunyi di Sumatera Utara, di mana Anda bisa bersentuhan langsung dengan gajah Sumatera. Anda dapat berinteraksi dengan mereka, memandikan mereka, menyentuh mereka, dan memberi mereka makan.",
+                    location = "Sumatera Utara",
+                    position = Position(long = 4.666667, lat = -0.833333)
                 ),
-                Itinerary(
-                    id = 4,
-                    name = "Candi Borobudur",
-                    category = Category(
-                        idCategory = 1,
-                        iconCategory = "https://cdn.icon-icons.com/icons2/1894/PNG/512/iconfinder-tempaltaaaeas-3305213_120860.png",
-                        nameCategory = "Alam"
-                    ),
-                    image = "https://backoffice.konstruksiindo.id/images/posts/large/1689666990_bb8391f730ba479baf81.jpeg",
-                    description = "Candi Buddha terbesar di dunia, terletak di Magelang, Jawa Tengah.",
-                    location = "Yogyakarta",
-                    position = Position(long = 110.204336, lat = -7.607994)
-                ),
-                Itinerary(
-                    id = 5,
-                    name = "Candi Borobudur",
-                    category = Category(
-                        idCategory = 1,
-                        iconCategory = "https://cdn.icon-icons.com/icons2/1894/PNG/512/iconfinder-tempaltaaaeas-3305213_120860.png",
-                        nameCategory = "Alam"
-                    ),
-                    image = "https://backoffice.konstruksiindo.id/images/posts/large/1689666990_bb8391f730ba479baf81.jpeg",
-                    description = "Candi Buddha terbesar di dunia, terletak di Magelang, Jawa Tengah.",
-                    location = "Yogyakarta",
-                    position = Position(long = 110.204336, lat = -7.607994)
-                )
             )
         }
 
@@ -114,18 +88,13 @@ class FakeDataGenerator {
                 ),
                 City(
                     idCity = 2,
-                    imgCity = "https://discoveringsurabaya.files.wordpress.com/2015/09/landmark1.jpg",
-                    nameCity = "Surabaya"
+                    imgCity = "https://images.solopos.com/2021/04/kota-magelang.jpg",
+                    nameCity = "Magelang"
                 ),
                 City(
                     idCity = 3,
-                    imgCity = "https://discoveringsurabaya.files.wordpress.com/2015/09/landmark1.jpg",
-                    nameCity = "Surabaya"
-                ),
-                City(
-                    idCity = 4,
-                    imgCity = "https://discoveringsurabaya.files.wordpress.com/2015/09/landmark1.jpg",
-                    nameCity = "Surabaya"
+                    imgCity = "https://getlost.id/wp-content/uploads/2022/01/Baiturrahman_1303539688.jpg",
+                    nameCity = "Aceh"
                 ),
             )
         }
@@ -151,6 +120,36 @@ class FakeDataGenerator {
                                 image = "https://backoffice.konstruksiindo.id/images/posts/large/1689666990_bb8391f730ba479baf81.jpeg"
                             )
                         )
+                    )
+                }
+                2 -> {
+                    Itinerary(
+                        id = 2,
+                        name = "Weh Island",
+                        category = Category(
+                            idCategory = 2,
+                            iconCategory = "https://static-00.iconduck.com/assets.00/beach-icon-512x441-ow4q6h9s.png",
+                            nameCategory = "Pantai"
+                        ),
+                        image = "https://okuselatan.disway.id/upload/35a83374bdf1245f05b6bde5085ac7ba.jpg",
+                        description = "Pulau Weh adalah tempat unik di Indonesia yang dihuni oleh penduduk asli dengan budaya campuran dan umat Islam yang taat. Pulau ini memiliki beberapa tempat menyelam paling terkenal di dunia, seperti Batee Tokong dan Kepulauan Sipadan.",
+                        location = "Aceh",
+                        position = Position(long = 3.066667, lat = -1.833333)
+                    )
+                }
+                3 -> {
+                    Itinerary(
+                        id = 3,
+                        name = "Tangkahan",
+                        category = Category(
+                            idCategory = 1,
+                            iconCategory = "https://cdn.icon-icons.com/icons2/1894/PNG/512/iconfinder-tempaltaaaeas-3305213_120860.png",
+                            nameCategory = "Alam"
+                        ),
+                        image = "https://pelitabaru.com/wp-content/uploads/2021/08/tangkahan.jpg",
+                        description = "Tangkahan adalah surga tersembunyi di Sumatera Utara, di mana Anda bisa bersentuhan langsung dengan gajah Sumatera. Anda dapat berinteraksi dengan mereka, memandikan mereka, menyentuh mereka, dan memberi mereka makan.",
+                        location = "Sumatera Utara",
+                        position = Position(long = 113.890198, lat = -1.560745)
                     )
                 }
 

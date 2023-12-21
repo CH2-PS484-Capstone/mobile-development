@@ -18,6 +18,9 @@
         android:theme="@style/Theme.Explorin"
         tools:targetApi="31">
         <activity
+            android:name=".presentation.ui.buddies.join.JoinBuddiesActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentation.ui.buddies.BuddiesActivity"
             android:exported="false" />
         <activity
