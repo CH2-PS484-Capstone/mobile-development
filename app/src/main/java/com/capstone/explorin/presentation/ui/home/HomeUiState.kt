@@ -4,6 +4,7 @@ import com.capstone.explorin.domain.model.BuddiesList
 import com.capstone.explorin.domain.model.Category
 import com.capstone.explorin.domain.model.City
 import com.capstone.explorin.domain.model.Itinerary
+import com.capstone.explorin.domain.model.User
 
 
 data class HomeUiState (
@@ -12,5 +13,6 @@ data class HomeUiState (
     val categories : List<Category> = emptyList(),
     val recommendations : List<Itinerary> = emptyList(),
     val city : List<City> = emptyList(),
-    val buddies: List<BuddiesList> = emptyList()
+    val buddies: List<BuddiesList> = emptyList(),
+    val user: User? = null
 )

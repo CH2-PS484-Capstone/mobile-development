@@ -3,21 +3,15 @@ package com.capstone.explorin.presentation.ui.home
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.capstone.explorin.data.datasource.FakeDataGenerator
-import com.capstone.explorin.data.datasource.local.entity.CategoryEntity
-import com.capstone.explorin.data.datasource.local.entity.CityEntity
-import com.capstone.explorin.data.datasource.local.entity.ItineraryWithCityAndCategory
 import com.capstone.explorin.domain.model.BuddiesList
 import com.capstone.explorin.domain.model.Category
 import com.capstone.explorin.domain.model.City
 import com.capstone.explorin.domain.model.Itinerary
-import com.capstone.explorin.domain.model.Position
-import com.capstone.explorin.domain.repository.ItineraryRepository
-import dagger.hilt.android.lifecycle.HiltViewModel
+import com.capstone.explorin.domain.model.User
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
 //@HiltViewModel
 class HomeViewModel  : ViewModel() {
@@ -81,6 +75,18 @@ class HomeViewModel  : ViewModel() {
         }
     }
 
+    fun getUser() {
+        viewModelScope.launch {
+            isLoading(true)
+            isError(false)
+
+            val fakeUser = FakeDataGenerator.userData()
+            setUser(fakeUser)
+
+            isLoading(false)
+        }
+    }
+
     private fun isLoading(value : Boolean){
         _state.update {
             it.copy(isLoading = value)
@@ -121,4 +127,9 @@ class HomeViewModel  : ViewModel() {
         }
     }
 
+    private fun setUser(users: List<User>) {
+        _state.update {
+            it.copy(user = users.firstOrNull()) // Use firstOrNull() to get the first user or null if the list is empty
+        }
+    }
 }

@@ -15,6 +15,7 @@ import com.capstone.explorin.databinding.ActivityDetailBinding
 import com.capstone.explorin.domain.model.Gallery
 import com.capstone.explorin.domain.model.Itinerary
 import com.capstone.explorin.presentation.adapter.GalleryAdapter
+import com.capstone.explorin.presentation.ui.buddies.BuddiesActivity
 import com.capstone.explorin.presentation.ui.view360.View360Activity
 import com.capstone.explorin.presentation.utils.LocationConverter
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -110,21 +111,26 @@ class DetailActivity : AppCompatActivity(), OnMapReadyCallback {
     }
 
     private fun btnClicked() {
-        binding.detailContent.btn360.setOnClickListener {
-            val data = viewModel.state.value.itinerary
-            data?.let {
-                val intent = Intent(this@DetailActivity, View360Activity::class.java)
-                intent.putExtra("id", it.id)
-                intent.putExtra("name", it.name)
-                intent.putExtra("lat", it.position.lat)
-                intent.putExtra("long", it.position.long)
+        binding.detailContent.apply {
+            btn360.setOnClickListener {
+                val data = viewModel.state.value.itinerary
+                data?.let {
+                    val intent = Intent(this@DetailActivity, View360Activity::class.java)
+                    intent.putExtra("id", it.id)
+                    intent.putExtra("name", it.name)
+                    intent.putExtra("lat", it.position.lat)
+                    intent.putExtra("long", it.position.long)
+                    startActivity(intent)
+                }
+            }
+            btnBuddies.setOnClickListener {
+                val intent = Intent(this@DetailActivity, BuddiesActivity::class.java)
                 startActivity(intent)
             }
         }
-
     }
 
-    private fun setDataAdapter(data : List<Gallery>) {
+    private fun setDataAdapter(data: List<Gallery>) {
         val galleryAdapter = GalleryAdapter()
         galleryAdapter.submitList(data)
 
@@ -132,7 +138,6 @@ class DetailActivity : AppCompatActivity(), OnMapReadyCallback {
             rvGallery.adapter = galleryAdapter
         }
     }
-
 
 
     private fun loadingStateIsToggled(value: Boolean) {
@@ -190,10 +195,12 @@ class DetailActivity : AppCompatActivity(), OnMapReadyCallback {
                 TODO()
                 true
             }
+
             android.R.id.home -> {
                 onBackPressedDispatcher.onBackPressed()
                 return true
             }
+
             else -> super.onOptionsItemSelected(item)
         }
     }
@@ -201,19 +208,19 @@ class DetailActivity : AppCompatActivity(), OnMapReadyCallback {
     /** CHECK PERMISSION
 
     private fun getLocation() {
-        if (checkPermission(Manifest.permission.ACCESS_FINE_LOCATION) &&
-            checkPermission(Manifest.permission.ACCESS_COARSE_LOCATION)
-        ) {
+    if (checkPermission(Manifest.permission.ACCESS_FINE_LOCATION) &&
+    checkPermission(Manifest.permission.ACCESS_COARSE_LOCATION)
+    ) {
 
-        }
+    }
     }
 
     private fun checkPermission(permission: String): Boolean {
-        return ContextCompat.checkSelfPermission(
-            this,
-            permission
-        ) == PackageManager.PERMISSION_GRANTED
+    return ContextCompat.checkSelfPermission(
+    this,
+    permission
+    ) == PackageManager.PERMISSION_GRANTED
     }
 
-    **/
+     **/
 }

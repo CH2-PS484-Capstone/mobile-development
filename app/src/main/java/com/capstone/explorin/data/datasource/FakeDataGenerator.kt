@@ -224,7 +224,7 @@ class FakeDataGenerator {
                     ),
                     dateOfBirth = "1990-05-15",
                     gender = "Male",
-                    imgProfile = "https://example.com/profile/budi_santoso.jpg"
+                    imgProfile = "https://wallpapercave.com/wp/wp6674486.png"
                 ),
                 User(
                     id = 2,

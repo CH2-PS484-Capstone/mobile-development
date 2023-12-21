@@ -38,7 +38,7 @@ class BuddiesActivity : AppCompatActivity() {
                 loadingStateIsToggled(stateData)
                 errorStateIsToggled(state.isError)
 
-                binding?.detailContent?.root?.visibility =
+                binding.detailContent.root.visibility =
                     if ((!stateData || state.isLoading) && !state.isError) View.VISIBLE else View.GONE
 
                 setBuddies(state.buddies)
@@ -47,13 +47,13 @@ class BuddiesActivity : AppCompatActivity() {
     }
 
     private fun loadingStateIsToggled(value: Boolean) {
-        binding?.apply {
+        binding.apply {
             stateLoading.root.visibility = if (value) View.VISIBLE else View.GONE
         }
     }
 
     private fun errorStateIsToggled(value: Boolean) {
-        binding?.apply {
+        binding.apply {
             stateError.root.visibility = if (value) View.VISIBLE else View.GONE
         }
     }
@@ -62,7 +62,7 @@ class BuddiesActivity : AppCompatActivity() {
         val buddiesAdapter = BuddiesAdapter()
         buddiesAdapter.submitList(buddies)
 
-        binding?.detailContent?.apply {
+        binding.detailContent.apply {
             rvBuddies.adapter = buddiesAdapter
         }
 

@@ -2,18 +2,19 @@ package com.capstone.explorin.presentation.ui.home
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import com.bumptech.glide.Glide
 import com.capstone.explorin.databinding.FragmentHomeBinding
 import com.capstone.explorin.domain.model.BuddiesList
 import com.capstone.explorin.domain.model.Category
 import com.capstone.explorin.domain.model.City
 import com.capstone.explorin.domain.model.Itinerary
+import com.capstone.explorin.domain.model.User
 import com.capstone.explorin.presentation.adapter.BuddiesAdapter
 import com.capstone.explorin.presentation.adapter.CategoryAdapter
 import com.capstone.explorin.presentation.adapter.CityAdapter
@@ -54,6 +55,7 @@ class HomeFragment : Fragment() {
         viewModel.getPopular()
         viewModel.getCities()
         viewModel.getBuddies()
+        viewModel.getUser()
 
         lifecycleScope.launch {
             viewModel.state.collect { state ->
@@ -69,6 +71,7 @@ class HomeFragment : Fragment() {
                 setRecommendations(state.recommendations)
                 setCities(state.city)
                 setBuddies(state.buddies)
+                setUser(state.user)
             }
         }
     }
@@ -133,6 +136,17 @@ class HomeFragment : Fragment() {
         }
     }
 
+    private fun setUser(user: User?) {
+        binding?.detailContent?.apply {
+            tvProfile.text = user?.username
+
+            Glide.with(civProfile)
+                .load(user?.imgProfile)
+                .into(civProfile)
+
+        }
+    }
+
     private fun setBuddies(buddies: List<BuddiesList>) {
         val buddiesAdapter = BuddiesAdapter()
         buddiesAdapter.submitList(buddies)
@@ -151,6 +165,12 @@ class HomeFragment : Fragment() {
             }
 
         })
+//        val recommendationAdapter = ItineraryAdapter()
+//        recommendationAdapter.submitList(buddies)
+//
+//        binding?.detailContent?.apply {
+//            rvBuddies.adapter = recommendationAdapter
+//        }
     }
 
 }
