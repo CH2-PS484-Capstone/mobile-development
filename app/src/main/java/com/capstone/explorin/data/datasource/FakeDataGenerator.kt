@@ -185,7 +185,8 @@ class FakeDataGenerator {
                         location = "Yogyakarta",
                         position = Position(long = 110.204336, lat = -7.607994)
                     ),
-                    buddiesDescription = "Yok join guys -2 ke bromo",
+                    buddiesTitle = "Yok join guys -2 ke borobudur",
+                    buddiesDescription = "Kita masih -2 orang lagi nih guys, ke borobudur terus nginep daerah sekitaran sana untuk 3d2n ",
                     people = userData()
                 ),
                 BuddiesList(
@@ -203,7 +204,8 @@ class FakeDataGenerator {
                         location = "Yogyakarta",
                         position = Position(long = 110.204336, lat = -7.607994)
                     ),
-                    buddiesDescription = "Yok join guys -2 ke bromo",
+                    buddiesTitle = "Yok join guys -2 ke borobudur",
+                    buddiesDescription = "Kita masih -2 orang lagi nih guys, ke borobudur terus nginep daerah sekitaran sana untuk 3d2n ",
                     people = userData()
                 )
             )
@@ -239,7 +241,7 @@ class FakeDataGenerator {
                     ),
                     dateOfBirth = "1988-10-20",
                     gender = "Female",
-                    imgProfile = "https://example.com/profile/anita_wijaya.jpg"
+                    imgProfile = "https://akcdn.detik.net.id/visual/2019/01/29/b47f28f1-52e8-47c7-bfee-1c1e7e3168fb_43.jpeg?w=360&q=90"
                 ),
                 User(
                     id = 3,
@@ -254,7 +256,7 @@ class FakeDataGenerator {
                     ),
                     dateOfBirth = "1995-03-03",
                     gender = "Male",
-                    imgProfile = "https://example.com/profile/ahmad_rahman.jpg"
+                    imgProfile = "https://static.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/p1/294/2023/08/21/valak2-3913459072.jpg"
                 ),
                 User(
                     id = 4,
@@ -269,7 +271,7 @@ class FakeDataGenerator {
                     ),
                     dateOfBirth = "1992-12-08",
                     gender = "Female",
-                    imgProfile = "https://example.com/profile/dewi_kusuma.jpg"
+                    imgProfile = "https://www.youngontop.com/wp-content/uploads/2023/11/D2.jpg"
                 ),
                 User(
                     id = 5,
@@ -284,9 +286,57 @@ class FakeDataGenerator {
                     ),
                     dateOfBirth = "1987-06-25",
                     gender = "Male",
-                    imgProfile = "https://example.com/profile/faisal_hidayat.jpg"
+                    imgProfile = "https://media.suara.com/pictures/653x366/2023/11/28/94367-kontroversi-satria-mahathir.webp"
                 )
             )
+        }
+
+        fun detailBuddies(id: Int): BuddiesList {
+            return when (id) {
+                1 -> {
+                    BuddiesList(
+                        id = 1,
+                        itinerary = Itinerary(
+                            id = 1,
+                            name = "Candi Borobudur",
+                            category = Category(
+                                idCategory = 1,
+                                iconCategory = "https://cdn.icon-icons.com/icons2/1894/PNG/512/iconfinder-tempaltaaaeas-3305213_120860.png",
+                                nameCategory = "Alam"
+                            ),
+                            image = "https://backoffice.konstruksiindo.id/images/posts/large/1689666990_bb8391f730ba479baf81.jpeg",
+                            description = "Candi Buddha terbesar di dunia, terletak di Magelang, Jawa Tengah.",
+                            location = "Yogyakarta",
+                            position = Position(long = 110.204336, lat = -7.607994)
+                        ),
+                        buddiesTitle = "Yok join guys -2 ke borobudur",
+                        buddiesDescription = "Kita masih -2 orang lagi nih guys, ke borobudur terus nginep daerah sekitaran sana untuk 3d2n ",
+                        people = userData()
+                    )
+                }
+
+                else -> {
+                    BuddiesList(
+                        id = 10,
+                        itinerary = Itinerary(
+                            id = 10,
+                            name = "",
+                            category = Category(
+                                idCategory = 10,
+                                iconCategory = "",
+                                nameCategory = ""
+                            ),
+                            image = "",
+                            description = "",
+                            location = "",
+                            position = Position(long = 110.204336, lat = -7.607994)
+                        ),
+                        buddiesTitle = "",
+                        buddiesDescription = "",
+                        people = userData()
+                    )
+                }
+            }
         }
     }
 }

@@ -33,9 +33,11 @@ class BuddiesAdapter: ListAdapter<BuddiesList, BuddiesAdapter.ViewHolder>(Buddie
             binding.tvTitle.text = data.itinerary.name
             binding.tvCategory.text = data.itinerary.category.nameCategory
             binding.tvLocation.text = data.itinerary.location
-            binding.tvHead.text = data.buddiesDescription
+            binding.tvHead.text = data.buddiesTitle
 
-
+            val peopleAdapter = PersonAdapter()
+            peopleAdapter.submitList(data.people)
+            binding.rvPeople.adapter = peopleAdapter
 
             Glide.with(itemView.context)
                 .load(data.itinerary.image)

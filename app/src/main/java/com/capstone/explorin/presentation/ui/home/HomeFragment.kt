@@ -165,12 +165,6 @@ class HomeFragment : Fragment() {
             }
 
         })
-//        val recommendationAdapter = ItineraryAdapter()
-//        recommendationAdapter.submitList(buddies)
-//
-//        binding?.detailContent?.apply {
-//            rvBuddies.adapter = recommendationAdapter
-//        }
     }
 
 }
