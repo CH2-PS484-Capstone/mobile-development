@@ -10,9 +10,10 @@
         android:id="@+id/civ_profile"
         android:layout_width="60dp"
         android:layout_height="60dp"
+        android:layout_marginTop="60dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@tools:sample/avatars"
+        android:src="@drawable/blank_profile"
         />
     
     <TextView
@@ -39,7 +40,7 @@
         />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/menu_mytrip"
+        android:id="@+id/edit_profile"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -48,7 +49,7 @@
         app:layout_constraintTop_toBottomOf="@id/civ_profile">
 
         <ImageView
-            android:id="@+id/mytrip_image"
+            android:id="@+id/profile_image"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginStart="16dp"
@@ -60,24 +61,24 @@
             app:srcCompat="@drawable/ic_user" />
 
         <TextView
-            android:id="@+id/mytrip_text"
+            android:id="@+id/profile_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             style="@style/LR14"
             android:text="@string/personal_information"
-            app:layout_constraintBottom_toBottomOf="@+id/mytrip_image"
-            app:layout_constraintStart_toEndOf="@+id/mytrip_image"
-            app:layout_constraintTop_toTopOf="@+id/mytrip_image" />
+            app:layout_constraintBottom_toBottomOf="@+id/profile_image"
+            app:layout_constraintStart_toEndOf="@+id/profile_image"
+            app:layout_constraintTop_toTopOf="@+id/profile_image" />
 
         <ImageView
-            android:id="@+id/mytrip_arrow"
+            android:id="@+id/profile_arrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
-            app:layout_constraintBottom_toBottomOf="@+id/mytrip_text"
+            app:layout_constraintBottom_toBottomOf="@+id/profile_text"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/mytrip_text"
+            app:layout_constraintTop_toTopOf="@+id/profile_text"
             app:srcCompat="@drawable/ic_arrow_right" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -86,9 +87,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/menu_mytrip"
-        app:layout_constraintStart_toStartOf="@+id/menu_mytrip"
-        app:layout_constraintTop_toBottomOf="@+id/menu_mytrip">
+        app:layout_constraintEnd_toEndOf="@+id/edit_profile"
+        app:layout_constraintStart_toStartOf="@+id/edit_profile"
+        app:layout_constraintTop_toBottomOf="@+id/edit_profile">
 
         <ImageView
             android:id="@+id/logout_image"

@@ -2,15 +2,15 @@ package com.capstone.explorin.presentation.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.capstone.explorin.R
-import com.capstone.explorin.data.response.Itinerary
 import com.capstone.explorin.databinding.ItemItineraryListBinding
+import com.capstone.explorin.domain.model.Itinerary
 
-class ItineraryAdapter: PagingDataAdapter<Itinerary, ItineraryAdapter.ViewHolder>(ItineraryDiffCallback()) {
+class ItineraryAdapter: ListAdapter<Itinerary, ItineraryAdapter.ViewHolder>(ItineraryDiffCallback()) {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -30,12 +30,12 @@ class ItineraryAdapter: PagingDataAdapter<Itinerary, ItineraryAdapter.ViewHolder
 
     inner class ViewHolder(private val binding: ItemItineraryListBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(data: Itinerary) {
-            binding.tvTitle.text = data.nameItinerary
-            binding.tvCategory.text = data.category.toString()
-            binding.tvLocation.text = data.city.toString()
+            binding.tvTitle.text = data.name
+            binding.tvCategory.text = data.category.nameCategory
+            binding.tvLocation.text = data.location
 
             Glide.with(itemView.context)
-                .load(data.photoItinerary)
+                .load(data.image)
                 .placeholder(R.drawable.ic_launcher_foreground)
                 .error(R.drawable.ic_launcher_foreground)
                 .fallback(R.drawable.ic_launcher_foreground)
@@ -45,7 +45,7 @@ class ItineraryAdapter: PagingDataAdapter<Itinerary, ItineraryAdapter.ViewHolder
 
     class ItineraryDiffCallback : DiffUtil.ItemCallback<Itinerary>() {
         override fun areItemsTheSame(oldItem: Itinerary, newItem: Itinerary): Boolean {
-            return oldItem.idItinerary == newItem.idItinerary
+            return oldItem.id == newItem.id
         }
 
         override fun areContentsTheSame(

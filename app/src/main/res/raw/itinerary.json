@@ -1,0 +1,59 @@
+{
+  "itinerary": [
+    {
+      "itineraryId": 1,
+      "name": "Itinerary 1",
+      "categoryId": 1,
+      "description": "Description of Itinerary 1",
+      "image": "image1.jpg",
+      "cityId": 1,
+      "lat": 34.0522,
+      "long": -118.2437,
+      "rating": 4.5
+    },
+    {
+      "itineraryId": 2,
+      "name": "Itinerary 2",
+      "categoryId": 2,
+      "description": "Description of Itinerary 2",
+      "image": "image2.jpg",
+      "cityId": 2,
+      "lat": 40.7128,
+      "long": -74.0060,
+      "rating": 4.2
+    },
+    {
+      "itineraryId": 3,
+      "name": "Itinerary 3",
+      "categoryId": 1,
+      "description": "Description of Itinerary 3",
+      "image": "image3.jpg",
+      "cityId": 3,
+      "lat": 51.5074,
+      "long": -0.1278,
+      "rating": 4.7
+    },
+    {
+      "itineraryId": 4,
+      "name": "Itinerary 4",
+      "categoryId": 3,
+      "description": "Description of Itinerary 4",
+      "image": "image4.jpg",
+      "cityId": 2,
+      "lat": 41.8781,
+      "long": -87.6298,
+      "rating": 4.0
+    },
+    {
+      "itineraryId": 5,
+      "name": "Itinerary 5",
+      "categoryId": 2,
+      "description": "Description of Itinerary 5",
+      "image": "image5.jpg",
+      "cityId": 1,
+      "lat": 37.7749,
+      "long": -122.4194,
+      "rating": 4.8
+    }
+  ]
+}

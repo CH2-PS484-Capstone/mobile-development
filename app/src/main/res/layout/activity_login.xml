@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:gbp="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:gbp="http://schemas.android.com/apk/res-auto"
-    tools:context=".presentation.ui.login.LoginActivity">
+    tools:context=".presentation.ui.auth.login.LoginActivity">
 
     <ImageView
         android:id="@+id/iv_onboarding"
@@ -15,51 +15,50 @@
         android:src="@drawable/login_bg" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/MainCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        style="@style/MainCard">
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <TextView
             android:id="@+id/tv_welcome"
+            style="@style/MB24"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:text="@string/welcome"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            style="@style/MB24" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tv_please_login"
+            style="@style/LR12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/please_login"
             android:layout_marginTop="5dp"
-            app:layout_constraintTop_toBottomOf="@id/tv_welcome"
+            android:text="@string/please_login"
             app:layout_constraintStart_toStartOf="parent"
-            style="@style/LR12"
-            />
-        
+            app:layout_constraintTop_toBottomOf="@id/tv_welcome" />
+
         <TextView
             android:id="@+id/tv_email"
+            style="@style/LR14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
             android:text="@string/email"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_please_login"
-            android:layout_marginTop="30dp"
-            style="@style/LR14"/>
+            app:layout_constraintTop_toBottomOf="@id/tv_please_login" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/edt_email"
             style="@style/TextInput"
             android:layout_marginTop="5dp"
-            app:startIconDrawable="@drawable/ic_email"
-            app:startIconTint="@color/primary_500"
             app:hintEnabled="false"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_email"
-            app:layout_constraintStart_toStartOf="parent">
+            app:startIconDrawable="@drawable/ic_email"
+            app:startIconTint="@color/primary_500">
 
             <com.capstone.explorin.presentation.customview.CustomEmailEditText
                 android:id="@+id/edt_email_input"
@@ -74,25 +73,25 @@
 
         <TextView
             android:id="@+id/tv_password"
+            style="@style/LR14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:text="@string/password"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/edt_email"
-            android:layout_marginTop="20dp"
-            style="@style/LR14"/>
+            app:layout_constraintTop_toBottomOf="@id/edt_email" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/edt_password"
             style="@style/TextInput"
             android:layout_marginTop="5dp"
-            app:startIconDrawable="@drawable/ic_password"
-            app:startIconTint="@color/primary_500"
             app:hintEnabled="false"
-            app:layout_constraintTop_toBottomOf="@id/tv_password"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_password"
             app:passwordToggleEnabled="true"
-            app:passwordToggleTint="@color/text_hint">
+            app:passwordToggleTint="@color/text_hint"
+            app:startIconDrawable="@drawable/ic_password"
+            app:startIconTint="@color/primary_500">
 
             <com.capstone.explorin.presentation.customview.CustomPasswordEditText
                 android:id="@+id/edt_password_input"
@@ -104,16 +103,16 @@
                 android:textColorHint="@color/text_hint"
                 android:textSize="16sp" />
         </com.google.android.material.textfield.TextInputLayout>
-        
-        
+
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_login"
             style="@style/ButtonStyle"
-            app:layout_constraintTop_toBottomOf="@id/edt_password"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/have_acc"
             android:layout_marginTop="40dp"
-            android:text="@string/masuk" />
+            android:text="@string/masuk"
+            app:layout_constraintBottom_toTopOf="@id/have_acc"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_password" />
 
         <TextView
             android:id="@+id/have_acc"
@@ -122,38 +121,50 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="4dp"
             android:text="@string/havent_account"
-            app:layout_constraintTop_toTopOf="@id/go_register"
             app:layout_constraintBottom_toBottomOf="@id/go_register"
             app:layout_constraintEnd_toStartOf="@id/go_register"
             app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/go_register" />
 
         <TextView
             android:id="@+id/go_register"
             style="@style/LR12"
-            android:textStyle="bold"
-            android:textColor="@color/primary_500"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/register"
             android:layout_marginTop="20dp"
-            app:layout_constraintTop_toBottomOf="@id/btn_login"
+            android:text="@string/register"
+            android:textColor="@color/primary_500"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/have_acc" />
+            app:layout_constraintStart_toEndOf="@id/have_acc"
+            app:layout_constraintTop_toBottomOf="@id/btn_login" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <com.jpardogo.android.googleprogressbar.library.GoogleProgressBar
-        android:id="@+id/progress_bar"
+    <!--    <com.jpardogo.android.googleprogressbar.library.GoogleProgressBar-->
+    <!--        android:id="@+id/progress_bar"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        android:layout_margin="10dp"-->
+    <!--        android:visibility="gone"-->
+    <!--        gbp:type="folding_circles"/>-->
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_margin="10dp"
+        android:indeterminateDrawable="@drawable/progress_icon"
         android:visibility="gone"
-        gbp:type="folding_circles"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

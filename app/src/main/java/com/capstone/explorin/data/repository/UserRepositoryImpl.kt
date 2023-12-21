@@ -95,6 +95,13 @@ class UserRepositoryImpl @Inject constructor(
         pref.removeAccessToken()
     }
 
+    override fun getLoginSession(): Flow<Boolean> = pref.getLoginSession()
+
+
+    override suspend fun saveLoginSession(session: Boolean) {
+        pref.saveLoginSession(session)
+    }
+
     override fun getAccessToken(): Flow<String?> = pref.getAccessToken()
 
 

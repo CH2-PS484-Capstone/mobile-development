@@ -1,0 +1,24 @@
+{
+  "category": [
+    {
+      "categoryId": 1,
+      "categoryName": "Adventure"
+    },
+    {
+      "categoryId": 2,
+      "categoryName": "Cultural"
+    },
+    {
+      "categoryId": 3,
+      "categoryName": "Historical"
+    },
+    {
+      "categoryId": 4,
+      "categoryName": "Nature"
+    },
+    {
+      "categoryId": 5,
+      "categoryName": "Urban"
+    }
+  ]
+}

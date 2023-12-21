@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.ui.profile.editprofile.EditProfileActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/civ_profile"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/blank_profile" />
+
+        <Button
+            android:id="@+id/btn_photo"
+            style="@style/ButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/change_photo"
+            app:layout_constraintEnd_toEndOf="@id/civ_profile"
+            app:layout_constraintStart_toStartOf="@id/civ_profile"
+            app:layout_constraintTop_toBottomOf="@id/civ_profile" />
+
+        <TextView
+            android:id="@+id/tv_fullname"
+            style="@style/LR14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_photo" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edt_name"
+            style="@style/TextInput"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="8dp"
+            app:hintEnabled="false"
+            app:layout_constraintStart_toStartOf="@id/tv_fullname"
+            app:layout_constraintTop_toBottomOf="@id/tv_fullname">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_name_input"
+                style="@style/LR16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/text_hint"
+                tools:text="@string/name" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tv_username"
+            style="@style/LR14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/username"
+            app:layout_constraintStart_toStartOf="@id/tv_fullname"
+            app:layout_constraintTop_toBottomOf="@id/edt_name" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edt_username"
+            style="@style/TextInput"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="8dp"
+            app:hintEnabled="false"
+
+            app:layout_constraintStart_toStartOf="@id/tv_username"
+            app:layout_constraintTop_toBottomOf="@id/tv_username">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_username_input"
+                style="@style/LR16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/text_hint"
+                tools:text="@string/username" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tv_handphone"
+            style="@style/LR14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/handphone"
+            app:layout_constraintStart_toStartOf="@id/tv_fullname"
+            app:layout_constraintTop_toBottomOf="@id/edt_username" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edt_handphone"
+            style="@style/TextInput"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="8dp"
+            app:hintEnabled="false"
+            app:layout_constraintStart_toStartOf="@id/tv_handphone"
+            app:layout_constraintTop_toBottomOf="@id/tv_handphone">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_handphone_input"
+                style="@style/LR16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/text_hint"
+                tools:text="@string/handphone" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tv_city"
+            style="@style/LR14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/domicile"
+            app:layout_constraintStart_toStartOf="@id/tv_fullname"
+            app:layout_constraintTop_toBottomOf="@id/edt_handphone" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edt_city"
+            style="@style/TextInput"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="8dp"
+            app:hintEnabled="false"
+            app:layout_constraintStart_toStartOf="@id/tv_handphone"
+            app:layout_constraintTop_toBottomOf="@id/tv_city">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_city_input"
+                style="@style/LR16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/text_hint"
+                tools:text="@string/city" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:id="@+id/tv_dob"
+            style="@style/LR14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/dob"
+            app:layout_constraintStart_toStartOf="@id/tv_fullname"
+            app:layout_constraintTop_toBottomOf="@id/edt_city" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edt_dob"
+            style="@style/TextInput"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="8dp"
+            app:hintEnabled="false"
+            app:layout_constraintStart_toStartOf="@id/tv_handphone"
+            app:layout_constraintTop_toBottomOf="@id/tv_dob">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_dob_input"
+                style="@style/LR16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/text_hint"
+                tools:text="@string/dob" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

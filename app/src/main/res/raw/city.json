@@ -1,0 +1,24 @@
+{
+  "city": [
+    {
+      "cityId": 1,
+      "cityName": "Surabaya"
+    },
+    {
+      "cityId": 2,
+      "cityName": "Jakarta"
+    },
+    {
+      "cityId": 3,
+      "cityName": "Bali"
+    },
+    {
+      "cityId": 4,
+      "cityName": "Bandung"
+    },
+    {
+      "cityId": 5,
+      "cityName": "Magelang"
+    }
+  ]
+}

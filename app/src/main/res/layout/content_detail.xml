@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/linearLayout"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_itinerary"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize10Percent"
+                tools:src="@tools:sample/backgrounds/scenic" />
+
+            <TextView
+                android:id="@+id/itinerary_name"
+                style="@style/MB24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="@id/iv_itinerary"
+                app:layout_constraintTop_toBottomOf="@id/iv_itinerary"
+                tools:text="Pantai Kuta" />
+
+            <TextView
+                android:id="@+id/tv_city"
+                style="@style/MSB16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="5dp"
+                android:drawablePadding="4dp"
+                android:gravity="center_vertical"
+                android:padding="5dp"
+                app:layout_constraintStart_toStartOf="@id/itinerary_name"
+                app:layout_constraintTop_toBottomOf="@id/itinerary_name"
+                tools:text="Bali" />
+
+
+            <TextView
+                android:id="@+id/rating"
+                style="@style/LR12"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="5dp"
+                android:drawablePadding="4dp"
+                android:gravity="center_vertical"
+                android:padding="5dp"
+                app:drawableStartCompat="@drawable/ic_stars"
+                app:drawableTint="@color/yellow"
+                app:layout_constraintBottom_toBottomOf="@id/tv_city"
+                app:layout_constraintStart_toEndOf="@id/tv_city"
+                app:layout_constraintTop_toTopOf="@id/tv_city"
+                tools:text="@string/stars_rate" />
+
+            <TextView
+                android:id="@+id/tv_description"
+                style="@style/LR14"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tv_city"
+                app:layout_constraintTop_toBottomOf="@id/tv_city"
+                tools:text="@string/dummy_text" />
+
+            <TextView
+                android:id="@+id/tv_category"
+                style="@style/MSB16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/category"
+                app:layout_constraintStart_toStartOf="@id/tv_description"
+                app:layout_constraintTop_toBottomOf="@id/tv_description" />
+
+            <ImageView
+                android:id="@+id/iv_category"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/ic_forest"
+                app:layout_constraintStart_toStartOf="@id/tv_category"
+                app:layout_constraintTop_toBottomOf="@id/tv_category" />
+
+            <TextView
+                android:id="@+id/tv_category_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                app:layout_constraintBottom_toBottomOf="@id/iv_category"
+                app:layout_constraintStart_toEndOf="@id/iv_category"
+                app:layout_constraintTop_toTopOf="@id/iv_category"
+                tools:text="@string/string_parking" />
+
+            <!--            <androidx.recyclerview.widget.RecyclerView-->
+            <!--                android:id="@+id/rv_category"-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="12dp"-->
+            <!--                android:orientation="horizontal"-->
+            <!--                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"-->
+            <!--                app:layout_constraintStart_toStartOf="@id/tv_category"-->
+            <!--                app:layout_constraintTop_toBottomOf="@id/tv_category"-->
+            <!--                tools:listitem="@layout/item_category" />-->
+
+            <TextView
+                android:id="@+id/tv_gallery"
+                style="@style/MSB16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/photos"
+                app:layout_constraintStart_toStartOf="@id/iv_category"
+                app:layout_constraintTop_toBottomOf="@id/iv_category" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_gallery"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintStart_toStartOf="@id/tv_gallery"
+                app:layout_constraintTop_toBottomOf="@id/tv_gallery"
+                tools:listitem="@layout/item_gallery" />
+
+            <TextView
+                android:id="@+id/tv_location"
+                style="@style/MSB16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/location"
+                app:layout_constraintStart_toStartOf="@id/rv_gallery"
+                app:layout_constraintTop_toBottomOf="@id/rv_gallery" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_maps"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="12dp"
+                app:layout_constraintEnd_toEndOf="@id/iv_itinerary"
+                app:layout_constraintStart_toStartOf="@id/iv_itinerary"
+                app:layout_constraintTop_toBottomOf="@id/tv_location">
+
+                <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/map"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:context=".presentation.ui.detail.DetailActivity" />
+
+            </androidx.cardview.widget.CardView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/background_white500_with_radius"
+        android:elevation="12dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/btn_360"
+            style="@style/Widget.Material3.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato_bold"
+            android:gravity="center"
+            android:text="@string/see_360"
+            android:textSize="16sp"
+            android:layout_marginEnd="12dp"/>
+
+        <Button
+            android:id="@+id/btn_buddies"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato_bold"
+            android:gravity="center"
+            android:text="@string/find_buddies"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
