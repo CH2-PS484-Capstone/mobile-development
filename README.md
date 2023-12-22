@@ -20,7 +20,7 @@
 [Here](https://drive.google.com/file/d/1T2abuxUsZTvOLdcvY3Qwzausn3zrYEuG/view?usp=sharing)
 
 ## Minimum Requirement
-The minimum requirement for installing Exploreka SDK is SDK 21 (Android 5.0 Lollipop or higher) on the device.
+The minimum requirement for installing Exploreka SDK is SDK 24 on the device.
 
 ## Related Links
 - [Demo Video of Explorin App](https://youtube.com/shorts/_9KDqFnHMOQ)
